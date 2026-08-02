@@ -2,59 +2,53 @@ export default function App() {
   return (
     <main
       style={{
-        backgroundColor: "#0b1020",
+        backgroundColor: "#07111f",
         color: "white",
         minHeight: "100vh",
         fontFamily: "Arial, sans-serif",
-        padding: "40px",
       }}
     >
-      <header style={{ marginBottom: "60px" }}>
-        <h1 style={{ fontSize: "3rem", marginBottom: "10px" }}>
-          Blu's Krew Media
-        </h1>
+      <div
+        style={{
+          width: "100%",
+          maxWidth: "1440px",
+          margin: "0 auto",
+          padding: "0 32px",
+        }}
+      >
+        <nav
+          style={{
+            height: "80px",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+          }}
+        >
+          <h1
+            style={{
+              fontSize: "2rem",
+              fontWeight: "700",
+              color: "#4da6ff",
+            }}
+          >
+            Blu's Krew
+          </h1>
 
-        <p style={{ fontSize: "1.25rem", color: "#8fb8ff" }}>
-          Built Through Pressure.
-        </p>
-
-        <p style={{ maxWidth: "700px", lineHeight: "1.7" }}>
-          Music. Media. Events. Storytelling.
-          We create opportunities for independent artists through
-          professional content, live experiences, and innovative promotion.
-        </p>
-      </header>
-
-      <section style={{ marginBottom: "40px" }}>
-        <h2>Featured Brands</h2>
-
-        <ul>
-          <li>Blu's Krew TV</li>
-          <li>Blu Chek</li>
-          <li>TEEM Blu Rekords</li>
-          <li>Live Events</li>
-        </ul>
-      </section>
-
-      <section style={{ marginBottom: "40px" }}>
-        <h2>Featured Artists</h2>
-
-        <ul>
-          <li>Karson Blu</li>
-          <li>KT Mello</li>
-          <li>Jay2X</li>
-          <li>Lonnie 808</li>
-        </ul>
-      </section>
-
-      <section>
-        <h2>Coming Soon</h2>
-
-        <p>
-          This website is being rebuilt from the ground up using React,
-          GitHub, and Netlify.
-        </p>
-      </section>
+          <div
+            style={{
+              display: "flex",
+              gap: "32px",
+              fontSize: "1rem",
+            }}
+          >
+            <span>Home</span>
+            <span>Artists</span>
+            <span>Media</span>
+            <span>Booking</span>
+            <span>Contact</span>
+          </div>
+        </nav>
+      </div>
     </main>
   );
 }
