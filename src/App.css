@@ -182,3 +182,599 @@
     border-right-color: var(--border);
   }
 }
+#artists {
+  padding: 60px 20px;
+  text-align: center;
+  background: #07111f;
+}
+
+#artists h2 {
+  color: #4da6ff;
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+}
+
+.artist-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.artist-card {
+  padding: 20px;
+  text-align: center;
+}
+
+.artist-card h3 {
+  color: #2498ff;
+  font-size: 1.5rem;
+  margin-bottom: 8px;
+}
+
+.artist-card p {
+  color: white;
+  margin: 0;
+}
+
+.artist-logo {
+  width: 100%;
+  height: 220px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+}
+.kt-logo {
+  transform: scale(1.35) translateY(80px);
+}
+.jay-logo {
+  transform: scale(1.15);
+}
+.j74l-logo {
+  transform: scale(1.15);
+}
+.artist-photo {
+  width: 100%;
+  max-width: 350px;
+  height: 420px;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+  margin: 20px auto 0;
+  border-radius: 12px;
+}
+.karson-card {
+  position: relative;
+  height: 420px;
+}
+
+.karson-card .karson-logo,
+.karson-card .karson-photo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.4s ease;
+}
+
+.karson-card .karson-logo {
+  opacity: 1;
+}
+
+.karson-card .karson-photo {
+  opacity: 0;
+  margin: 0;
+  width: auto;
+height: 37%;
+
+object-fit: contain;
+  
+}
+
+.karson-card:hover .karson-logo {
+  opacity: 0;
+}
+
+.karson-card:hover .karson-photo {
+  opacity: 1;
+}
+.j74l-card {
+  position: relative;
+}
+
+.j74l-card .j74l-logo,
+.j74l-card .j74l-photo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.4s ease;
+}
+
+.j74l-card .j74l-logo {
+  opacity: 1;
+}
+
+.j74l-card .j74l-photo {
+  opacity: 0;
+  margin: 0;
+  width: auto;
+  height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.j74l-card:hover .j74l-logo {
+  opacity: 0;
+}
+
+.j74l-card:hover .j74l-photo {
+  opacity: 1;
+}
+
+.jay-card {
+  position: relative;
+}
+
+.jay-card .jay-logo,
+.jay-card .jay-photo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.4s ease;
+}
+
+.jay-card .jay-logo {
+  opacity: 1;
+}
+
+.jay-card .jay-photo {
+  opacity: 0;
+}
+
+.jay-card .jay-photo {
+  height: 220px;
+  width: auto;
+  object-fit: contain;
+}
+.jay-card:hover .jay-logo {
+  opacity: 0;
+}
+
+.jay-card:hover .jay-photo {
+  opacity: 1;
+}
+.j74l-card {
+  height: 260px;
+  position: relative;
+}
+
+.j74l-card .j74l-logo,
+.j74l-card .j74l-photo {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  transform: none;
+  object-fit: contain;
+}
+
+.j74l-card .j74l-logo {
+  opacity: 1;
+}
+
+.j74l-card .j74l-photo {
+  opacity: 0;
+}
+
+.j74l-card:hover .j74l-logo {
+  opacity: 0;
+}
+
+.j74l-card:hover .j74l-photo {
+  opacity: 1;
+}
+.karson-card .karson-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  top: 0;
+  left: 0;
+  transform: none;
+}
+.kt-card {
+  position: relative;
+}
+
+.kt-card .kt-logo,
+.kt-card .kt-photo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.4s ease;
+}
+
+.kt-card .kt-logo {
+  opacity: 1;
+}
+
+.kt-card .kt-photo {
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.kt-card:hover .kt-logo {
+  opacity: 0;
+}
+
+.kt-card:hover .kt-photo {
+  opacity: 1;
+}
+.kt-card .kt-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+#media {
+  padding: 80px 8%;
+  text-align: center;
+}
+
+#media h2 {
+  font-size: 3rem;
+  margin-bottom: 40px;
+}
+
+.media-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.media-card {
+  min-height: 220px;
+  padding: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+.media-card:hover {
+  transform: translateY(-6px);
+}
+
+.media-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 12px;
+}
+
+.media-card p {
+  opacity: 0.75;
+  line-height: 1.5;
+}
+
+/* KARSON BLU ARTIST PAGE */
+
+.karson-page {
+  min-height: 100vh;
+  background: #07111f;
+  color: white;
+  padding: 30px;
+  text-align: center;
+}
+
+.back-button {
+  display: block;
+  margin-bottom: 40px;
+  padding: 10px 18px;
+  background: transparent;
+  color: white;
+  border: 1px solid white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.karson-hero {
+  padding: 70px 20px;
+}
+
+.karson-hero h1 {
+  font-size: clamp(3rem, 9vw, 7rem);
+  margin: 0;
+  letter-spacing: 4px;
+}
+
+.karson-hero p {
+  font-size: 1.2rem;
+  margin-top: 15px;
+}
+
+.karson-options {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(180px, 300px));
+  justify-content: center;
+  gap: 20px;
+  padding: 30px 20px 80px;
+}
+
+.karson-option {
+  padding: 25px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  background: transparent;
+  color: white;
+  border: 1px solid white;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.karson-option:hover {
+  background: white;
+  color: #07111f;
+}
+
+@media (max-width: 600px) {
+  .karson-options {
+    grid-template-columns: 1fr;
+  }
+}
+
+.karson-hero {
+  position: relative;
+  min-height: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.karson-hero-photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+  opacity: 0.55;
+  z-index: 0;
+}
+
+.karson-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(7, 17, 31, 0.15),
+    rgba(7, 17, 31, 0.45),
+    #07111f
+  );
+  z-index: 1;
+}
+
+.karson-hero h1,
+.karson-hero p {
+  position: relative;
+  z-index: 2;
+}
+.karson-hero h1 {
+  color: white;
+  font-size: clamp(4rem, 9vw, 9rem);
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.65);
+}
+.karson-hero p {
+  margin-top: 30px;
+  font-size: 1.4rem;
+  color: white;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.8);
+}
+.karson-back {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 99999;
+  pointer-events: auto;
+}
+.karson-music {
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.music-card {
+  width: 280px;
+  max-width: 90%;
+  margin: 30px auto;
+}
+
+.music-cover {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  display: block;
+  border-radius: 12px;
+}
+
+.music-card h3 {
+  margin: 15px 0 5px;
+}
+
+.music-card p {
+  margin: 0;
+}
+.karson-shop {
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.shop-product {
+  width: 300px;
+  max-width: 90%;
+  margin: 30px auto;
+}
+
+.shop-product-image {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  display: block;
+  border-radius: 12px;
+}
+.shirt-colors {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 18px;
+}
+
+.shirt-colors button {
+  background: transparent;
+  color: white;
+  border: 1px solid white;
+  padding: 10px 14px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.shirt-colors button:hover {
+  background: white;
+  color: #07111f;
+}
+.shop-price {
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin: 22px 0 16px;
+}
+
+.size-label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+.shirt-sizes {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 22px;
+}
+
+.shirt-sizes button {
+  min-width: 46px;
+  padding: 10px;
+  background: transparent;
+  color: white;
+  border: 1px solid white;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.shirt-sizes button.selected {
+  background: white;
+  color: #07111f;
+}
+
+.shop-now-button {
+  width: 100%;
+  padding: 15px 20px;
+  background: white;
+  color: #07111f;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 900;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+.shirt-colors button.selected {
+  background: white;
+  color: #07111f;
+}
+
+.karson-booking {
+  max-width: 900px;
+  margin: 70px auto;
+  padding: 0 30px 50px;
+  text-align: center;
+}
+
+.karson-booking h2 {
+  color: white;
+  font-size: 2.4rem;
+  margin-bottom: 30px;
+  letter-spacing: 2px;
+}
+.booking-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  padding: 25px;
+  border: 1px solid #555;
+  border-radius: 10px;
+}
+
+.booking-form input,
+.booking-form textarea {
+  width: 100%;
+  box-sizing: border-box;
+  background: #111827;
+  color: white;
+  border: 1px solid #555;
+  border-radius: 6px;
+  padding: 15px;
+  font-size: 1rem;
+}
+.booking-form textarea {
+  grid-column: 1 / -1;
+  min-height: 150px;
+  resize: vertical;
+}
+
+.booking-submit {
+  grid-column: 1 / -1;
+  width: 100%;
+  padding: 16px;
+  background: white;
+  color: #07111f;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 900;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+.booking-form input:focus,
+.booking-form textarea:focus {
+  outline: none;
+  border-color: #4da6ff;
+  box-shadow: 0 0 10px rgba(77, 166, 255, 0.35);
+}
+
+.booking-form input::placeholder,
+.booking-form textarea::placeholder {
+  color: #aab4c3;
+}
+
+.booking-submit:hover {
+  background: #4da6ff;
+  color: white;
+}
