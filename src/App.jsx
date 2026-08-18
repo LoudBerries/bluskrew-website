@@ -13,6 +13,7 @@ import karsonProfile from "./assets/images/karson-profile-blue.jpeg";
 import j74lPhoto from "./assets/images/j74l-photo.png";
 export default function App() {
   const [page, setPage] = React.useState("TEST");
+  const [showMusicVideos, setShowMusicVideos] = React.useState(false);
   if (page === "karson") {
 return <KarsonBlu onBack={() => setPage("TEST")} />;
 }
@@ -140,9 +141,31 @@ boxSizing: "border-box",
   <p>Original shows, interviews, behind-the-scenes and exclusive content.</p>
 </a>
 
-    <div className="media-card">
+    <div
+  className="media-card"
+  onClick={() => setShowMusicVideos(!showMusicVideos)}
+  style={{ cursor: "pointer" }}
+>
       <h3>Music Videos</h3>
       <p>Watch the latest visuals from Blu's Krew artists.</p>
+      {showMusicVideos && (
+      <div className="vertical-video">
+        <div className="vertical-video">
+  <iframe
+    src="https://www.youtube.com/embed/DSS3FlJ0AT4"
+    title="Blu's Krew Music Video 2"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowFullScreen
+  ></iframe>
+</div>
+  <iframe
+    src="https://www.youtube.com/embed/N1Z7tCPLWVc"
+    title="Blu's Krew Music Video"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowFullScreen
+  ></iframe>
+</div>
+)}
     </div>
 
     <div className="media-card">
