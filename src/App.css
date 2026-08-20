@@ -900,4 +900,18 @@ object-fit: contain;
     white-space: nowrap;
   }
 }
+.karson-bio {
+  max-width: 700px;
+  margin: 24px auto 0;
+  padding: 0 20px;
+  text-align: left;
+}
+
+.karson-bio h2 {
+  text-align: center;
+}
+
+.karson-bio p {
+  line-height: 1.7;
+}
 

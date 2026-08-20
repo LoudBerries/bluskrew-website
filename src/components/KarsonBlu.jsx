@@ -26,6 +26,23 @@ function KarsonBlu({ onBack }) {
         <p>
           Built through pressure. Blooming anyway.
         </p>
+        <div className="karson-bio">
+  <h2>ABOUT KARSON BLU</h2>
+
+  <p>
+    Karson Blu is a Minneapolis-born artist bringing a gritty, edgy,
+    unapologetic energy to every record and performance. Built through
+    pressure and blooming anyway, Karson blends raw personality,
+    confidence, and real-life experience into music designed to leave
+    an impression.
+  </p>
+
+  <p>
+    More than an artist, Karson Blu is part of a growing movement
+    connecting music, media, live performances, and culture through
+    Blu&apos;s Krew Media.
+  </p>
+</div>
       </section>
 
 <img
@@ -75,11 +92,34 @@ function KarsonBlu({ onBack }) {
   />
 
   <h3>MINEY MOE</h3>
-  <p>Karson Blu</p>
+<p>Karson Blu</p>
+<div className="music-players">
+
+  <iframe
+    title="Miney Moe on Spotify"
+    src="https://open.spotify.com/embed/track/5zt43bGFTJpS1TByQHYOF5"
+    width="100%"
+    height="152"
+    frameBorder="0"
+    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+    loading="lazy"
+  ></iframe>
+
+  <iframe
+    title="Miney Moe on Apple Music"
+    src="https://embed.music.apple.com/us/album/miney-moe/6794842293?i=6794842294"
+    width="100%"
+    height="175"
+    frameBorder="0"
+    allow="autoplay *; encrypted-media *;"
+    loading="lazy"
+  ></iframe>
+
 </div>
-  </section>
-  )}
- {activeSection === "videos" && (
+</div>
+</section>
+)}
+{activeSection === "videos" && (
   <section className="karson-videos">
     <h2>KARSON BLU VIDEOS</h2>
     <iframe
