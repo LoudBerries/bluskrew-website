@@ -11,11 +11,13 @@ import jay2xPhoto from "./assets/images/jay2x-photo.png";
 import j74lLogo from "./assets/images/j74l-scales-logo.jpeg.jpeg";
 import karsonProfile from "./assets/images/karson-profile-blue.jpeg";
 import j74lPhoto from "./assets/images/j74l-photo.png";
+import Shop from "./components/Shop";
 export default function App() {
-  const [page, setPage] = React.useState("TEST");
+  const [page, setPage] = React.useState("home");
   const [showMusicVideos, setShowMusicVideos] = React.useState(false);
+if (page === "shop") return <Shop onBack={() => setPage("karson")} />;
   if (page === "karson") {
-return <KarsonBlu onBack={() => setPage("TEST")} />;
+return <KarsonBlu onBack={() => setPage("home")} onShop={() => setPage("shop")} />;
 }
   return (
     <main

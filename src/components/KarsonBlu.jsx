@@ -7,7 +7,7 @@ import shirtBlue from "../assets/images/karson-shirt-blue.jpeg";
 import shirtWhite from "../assets/images/karson-shirt-white.png";
 import scratchBlack from "../assets/images/scratch-black.png";
 import scratchWhite from "../assets/images/scratch-white.png";
-function KarsonBlu({ onBack }) {
+function KarsonBlu({ onBack, onShop }) {
   const [activeSection, setActiveSection] = useState(null);
   const [selectedShirt, setSelectedShirt] = useState(shirtBlack);
   const [selectedSize, setSelectedSize] = useState("M");
@@ -68,7 +68,7 @@ function KarsonBlu({ onBack }) {
 
         <button
   className="karson-option"
-  onClick={() => setActiveSection("shop")}
+ onClick={onShop}
 >
           SHOP
         </button>
