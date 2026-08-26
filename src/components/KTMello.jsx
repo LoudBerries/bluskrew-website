@@ -130,14 +130,14 @@ function KTMello({ onBack, onShop }) {
     
  {activeSection === "booking" && (
   <section className="karson-booking">
-    <h2>BOOK KARSON BLU</h2>
+  <h2>BOOK KT MELLO</h2>
   <form
   className="booking-form"
-  name="karson-booking"
+  name="kt-mello-booking"
   method="POST"
   data-netlify="true"
 >
-  <input type="hidden" name="form-name" value="karson-booking" />
+  <input type="hidden" name="form-name" value="kt-mello-booking" />
   <input
   type="text"
   name="name"
