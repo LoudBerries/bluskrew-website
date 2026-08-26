@@ -8,6 +8,21 @@ import shirtWhite from "../assets/images/karson-shirt-white.png";
 import scratchBlack from "../assets/images/scratch-black.png";
 import scratchWhite from "../assets/images/scratch-white.png";
 function KTMello({ onBack, onShop }) {
+  const handleBookingSubmit = async (e) => {
+  e.preventDefault();
+
+  const form = e.target;
+  const formData = new FormData(form);
+
+  await fetch("/", {
+    method: "POST",
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body: new URLSearchParams(formData).toString(),
+  });
+
+  alert("Booking request sent!");
+  form.reset();
+};
   const [activeSection, setActiveSection] = useState(null);
   const [selectedShirt, setSelectedShirt] = useState(shirtBlack);
   const [selectedSize, setSelectedSize] = useState("M");
@@ -129,9 +144,9 @@ function KTMello({ onBack, onShop }) {
 
     
  {activeSection === "booking" && (
-  <section className="karson-booking">
+  <section className="kt-mello-booking">
   <h2>BOOK KT MELLO</h2>
-  <form
+  <form onSubmit={handleBookingSubmit}
   className="booking-form"
   name="kt-mello-booking"
   method="POST"
