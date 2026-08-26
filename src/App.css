@@ -552,6 +552,9 @@ object-fit: contain;
   z-index: 0;
 }
 
+.kt-mello-hero-photo {
+  object-position: center top;
+}
 .karson-hero::after {
   content: "";
   position: absolute;

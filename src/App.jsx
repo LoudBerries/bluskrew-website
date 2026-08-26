@@ -1,6 +1,7 @@
 import React from "react";
 import Hero from "./components/Hero";
 import KarsonBlu from "./components/KarsonBlu";
+import KTMello from "./components/KTMello";
 import "./App.css";
 import karsonLogo from './assets/images/karson-blu-logo.jpg.jpeg'
 import karsonPhoto from "./assets/images/karson-photo.png";
@@ -14,12 +15,16 @@ import j74lPhoto from "./assets/images/j74l-photo.png";
 import Shop from "./components/Shop";
 export default function App() {
   const [page, setPage] = React.useState("home");
+  const [shopReturnPage, setShopReturnPage] = React.useState("home");
   const [showMusicVideos, setShowMusicVideos] = React.useState(false);
-if (page === "shop") return <Shop onBack={() => setPage("karson")} />;
+if (page === "shop") return <Shop onBack={() => setPage(shopReturnPage)} />;
   if (page === "karson") {
-return <KarsonBlu onBack={() => setPage("home")} onShop={() => setPage("shop")} />;
+return <KarsonBlu onBack={() => setPage("home")} onShop={() => { setShopReturnPage("karson"); setPage("shop"); }} />;
 }
-  return (
+ if (page === "ktmello") {
+return <KTMello onBack={() => setPage("home")} onShop={() => { setShopReturnPage("ktmello"); setPage("shop"); }} />;
+}
+return (
     <main
       style={{
         backgroundColor: "#07111f",
@@ -89,7 +94,7 @@ boxSizing: "border-box",
     className="artist-photo karson-photo"
   />
 </div>
-<div className="artist-card kt-card">
+<div className="artist-card kt-card" onClick={() => setPage("ktmello")}>
   <img
   src={ktMelloLogo}
   alt="KT Mello"
