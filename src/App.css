@@ -555,6 +555,21 @@ object-fit: contain;
 .kt-mello-hero-photo {
   object-position: center top;
 }
+.jay2x-hero-photo {
+object-position: center 12%;
+}
+.jay2x-video {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.jay2x-video iframe {
+  width: min(100%, 360px);
+  aspect-ratio: 9 / 16;
+  height: auto;
+  border: 0;
+}
 .karson-hero::after {
   content: "";
   position: absolute;

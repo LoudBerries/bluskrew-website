@@ -2,6 +2,7 @@ import React from "react";
 import Hero from "./components/Hero";
 import KarsonBlu from "./components/KarsonBlu";
 import KTMello from "./components/KTMello";
+import Jay2X from "./components/Jay2X";
 import "./App.css";
 import karsonLogo from './assets/images/karson-blu-logo.jpg.jpeg'
 import karsonPhoto from "./assets/images/karson-photo.png";
@@ -23,6 +24,9 @@ return <KarsonBlu onBack={() => setPage("home")} onShop={() => { setShopReturnPa
 }
  if (page === "ktmello") {
 return <KTMello onBack={() => setPage("home")} onShop={() => { setShopReturnPage("ktmello"); setPage("shop"); }} />;
+}
+if (page === "jay2x") {
+  return <Jay2X onBack={() => setPage("home")} onShop={() => { setShopReturnPage("jay2x"); setPage("shop"); }} />;
 }
 return (
     <main
@@ -106,7 +110,7 @@ boxSizing: "border-box",
   className="artist-photo kt-photo"
 />
 </div>
-<div className="artist-card jay-card">
+<div className="artist-card jay-card" onClick={() => setPage("jay2x")}>
  <img
   src={jay2xLogo}
   alt="Jay2X"
