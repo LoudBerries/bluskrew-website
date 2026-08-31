@@ -558,6 +558,15 @@ object-fit: contain;
 .jay2x-hero-photo {
 object-position: center 12%;
 }
+.j74l-hero {
+  min-height: 700px;
+}
+.j74l-hero-photo {
+  width: 75%;
+  left: 12.5%;
+  object-fit: cover;
+  object-position: center 10%;
+}
 .jay2x-video {
   display: flex;
   justify-content: center;
@@ -931,5 +940,69 @@ object-position: center 12%;
 
 .karson-bio p {
   line-height: 1.7;
+}
+/* J74L Anthem Exclusive Player */
+
+.j74l-track-card {
+  position: relative;
+  width: min(100%, 520px);
+  margin: 30px auto;
+}
+
+.j74l-track-cover {
+  display: block;
+  width: 100%;
+  border-radius: 12px;
+}
+
+.j74l-track-info {
+  text-align: center;
+}
+
+.j74l-track-info h3 {
+  font-size: 2rem;
+  margin: 18px 0 2px;
+}
+
+.j74l-track-info h4 {
+  margin: 0 0 12px;
+  color: #4da6ff;
+}
+
+.j74l-exclusive-badge {
+  display: inline-block;
+  padding: 7px 12px;
+  background: #0e305b;
+  border-radius: 5px;
+  font-size: 0.8rem;
+}
+
+.j74l-unreleased {
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  opacity: 0.7;
+}
+
+.j74l-anthem-player {
+  position: absolute;
+  left: 5%;
+  bottom: 190px;
+  width: 90%;
+  opacity: 0.92;
+}
+/* J74L Performance Video */
+
+.j74l-video {
+  width: min(100%, 900px);
+  aspect-ratio: 16 / 9;
+  margin: 30px auto;
+}
+
+.j74l-video iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  border-radius: 12px;
+  display: block;
 }
 

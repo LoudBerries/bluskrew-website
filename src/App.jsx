@@ -3,6 +3,7 @@ import Hero from "./components/Hero";
 import KarsonBlu from "./components/KarsonBlu";
 import KTMello from "./components/KTMello";
 import Jay2X from "./components/Jay2X";
+import J74L from "./components/J74L";
 import "./App.css";
 import karsonLogo from './assets/images/karson-blu-logo.jpg.jpeg'
 import karsonPhoto from "./assets/images/karson-photo.png";
@@ -27,6 +28,9 @@ return <KTMello onBack={() => setPage("home")} onShop={() => { setShopReturnPage
 }
 if (page === "jay2x") {
   return <Jay2X onBack={() => setPage("home")} onShop={() => { setShopReturnPage("jay2x"); setPage("shop"); }} />;
+}
+if (page === "j74l") {
+  return <J74L onBack={() => setPage("home")} onShop={() => { setShopReturnPage("j74l"); setPage("shop"); }} />;
 }
 return (
     <main
@@ -123,7 +127,7 @@ boxSizing: "border-box",
 />
 </div>
 
-<div className="artist-card j74l-card">
+<div className="artist-card j74l-card" onClick={() => setPage("j74l")}>
   <img
     src={j74lLogo}
     alt="J74L"
