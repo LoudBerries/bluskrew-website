@@ -4,6 +4,7 @@ import KarsonBlu from "./components/KarsonBlu";
 import KTMello from "./components/KTMello";
 import Jay2X from "./components/Jay2X";
 import J74L from "./components/J74L";
+import AJ from "./components/aj";
 import "./App.css";
 import karsonLogo from './assets/images/karson-blu-logo.jpg.jpeg'
 import karsonPhoto from "./assets/images/karson-photo.png";
@@ -31,6 +32,9 @@ if (page === "jay2x") {
 }
 if (page === "j74l") {
   return <J74L onBack={() => setPage("home")} onShop={() => { setShopReturnPage("j74l"); setPage("shop"); }} />;
+}
+if (page === "aj") {
+  return <AJ onBack={() => setPage("home")} />;
 }
 return (
     <main
@@ -143,6 +147,20 @@ boxSizing: "border-box",
 </div>
 
      </section>
+     <section className="krew-section">
+  <h2>MEET THE KREW</h2>
+
+  <div className="krew-grid">
+    <div
+      className="krew-card"
+      onClick={() => setPage("aj")}
+    >
+      <h3>AJ HARRIS</h3>
+      <p>Founder • Manager • Creative Director</p>
+      <span>The guy behind Blu's Krew.</span>
+    </div>
+  </div>
+</section>
      <section id="media">
   <h2>Media</h2>
 <div className="media-grid">
