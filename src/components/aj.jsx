@@ -23,6 +23,42 @@ function AJ({ onBack }) {
           <p className="aj-tagline">
             Somehow, this became my job.
           </p>
+          <a
+  href="https://www.instagram.com/loudberries_clothing/"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="artist-instagram"
+>
+  <svg
+    className="instagram-icon"
+    viewBox="0 0 24 24"
+    aria-hidden="true"
+  >
+    <path
+      fill="currentColor"
+      d="M7 2C4.24 2 2 4.24 2 7v10c0 2.76 2.24 5 5 5h10c2.76 0 5-2.24 5-5V7c0-2.76-2.24-5-5-5H7zm10 2c1.66 0 3 1.34 3 3v10c0 1.66-1.34 3-3 3H7c-1.66 0-3-1.34-3-3V7c0-1.66 1.34-3 3-3h10zm.5 1.5a1.25 1.25 0 100 2.5 1.25 1.25 0 000-2.5zM12 7a5 5 0 100 10 5 5 0 000-10zm0 2a3 3 0 110 6 3 3 0 010-6z"
+    />
+  </svg>
+  <span>@loudberries_clothing</span>
+</a>
+<a
+  href="https://www.instagram.com/bluskrew/"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="artist-instagram"
+>
+  <svg
+    className="instagram-icon"
+    viewBox="0 0 24 24"
+    aria-hidden="true"
+  >
+    <path
+      fill="currentColor"
+      d="M7 2C4.24 2 2 4.24 2 7v10c0 2.76 2.24 5 5 5h10c2.76 0 5-2.24 5-5V7c0-2.76-2.24-5-5-5H7zm10 2c1.66 0 3 1.34 3 3v10c0 1.66-1.34 3-3 3H7c-1.66 0-3-1.34-3-3V7c0-1.66 1.34-3 3-3h10zm.5 1.5a1.25 1.25 0 100 2.5 1.25 1.25 0 000-2.5zM12 7a5 5 0 100 10 5 5 0 000-10zm0 2a3 3 0 110 6 3 3 0 010-6z"
+    />
+  </svg>
+  <span>@bluskrew</span>
+</a>
         </div>
       </section>
       <section className="aj-about">
