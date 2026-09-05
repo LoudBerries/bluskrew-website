@@ -28,9 +28,7 @@ export default function Hero() {
 </p>
         
 
-        <button className="hero-button">
-          Meet Our Artists
-        </button>
+       
       </div>
     </section>
   );

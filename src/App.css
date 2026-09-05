@@ -1223,4 +1223,64 @@ object-position: center 12%;
   color: #07111f;
   transform: translateY(-2px);
 }
+/* SPONSORS */
+
+.sponsors-section {
+  padding: 50px 20px;
+  text-align: center;
+  background: #07111f;
+}
+
+.sponsors-label {
+  color: #4da6ff;
+  font-size: 0.9rem;
+  font-weight: 800;
+  letter-spacing: 4px;
+  margin-bottom: 30px;
+}
+
+.sponsors-grid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  flex-wrap: wrap;
+}
+
+.sponsor-card {
+  width: 220px;
+  height: 125px;
+  padding: 20px;
+  border: 1px solid rgba(77, 166, 255, 0.35);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.04);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  color: white;
+  text-decoration: none;
+}
+
+.sponsor-logo {
+  width: 140px;
+  height: 110px;
+  object-fit: contain;
+}
+
+.urban-drip-logo {
+  width: 160px;
+  height: 110px;
+}
+
+.sponsor-card span {
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.sponsor-card:hover {
+  border-color: #4da6ff;
+  transform: translateY(-4px);
+}
 

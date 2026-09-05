@@ -16,6 +16,20 @@ import j74lLogo from "./assets/images/j74l-scales-logo.jpeg.jpeg";
 import karsonProfile from "./assets/images/karson-profile-blue.jpeg";
 import j74lPhoto from "./assets/images/j74l-photo.png";
 import Shop from "./components/Shop";
+import urbanDripLogo from "./assets/images/urban-drip-logo.jpeg";
+import loudberriesLogo from "./assets/images/loudberries-logo.jpeg";
+const sponsors = [
+  {
+    name: "Urban Drip",
+    link: "https://www.instagram.com/urbandripbp/",
+    logo: urbanDripLogo,
+  },
+  {
+    name: "LoudBerries",
+    link: "https://www.instagram.com/loudberries_clothing/",
+    logo: loudberriesLogo,
+  },
+];
 export default function App() {
   const [page, setPage] = React.useState("home");
   const [shopReturnPage, setShopReturnPage] = React.useState("home");
@@ -87,6 +101,30 @@ boxSizing: "border-box",
           </div>
         </nav>
      <Hero />
+     <section className="sponsors-section">
+  <p className="sponsors-label">SPONSORED BY</p>
+
+  <div className="sponsors-grid">
+    {sponsors.map((sponsor) => (
+      <a
+        key={sponsor.name}
+        href={sponsor.link}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="sponsor-card"
+      >
+        <img
+          src={sponsor.logo}
+          alt={`${sponsor.name} logo`}
+          className={`sponsor-logo ${
+            sponsor.name === "Urban Drip" ? "urban-drip-logo" : ""
+          }`}
+        />
+        <span>{sponsor.name}</span>
+      </a>
+    ))}
+  </div>
+</section>
      <section id="artists">
      <h2>Meet the Krew</h2>
      <div className="artist-grid">
