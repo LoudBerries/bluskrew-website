@@ -18,6 +18,8 @@ import j74lPhoto from "./assets/images/j74l-photo.png";
 import Shop from "./components/Shop";
 import urbanDripLogo from "./assets/images/urban-drip-logo.jpeg";
 import loudberriesLogo from "./assets/images/loudberries-logo.jpeg";
+import lonnie808Photo from "./assets/images/lonnie808-main.jpeg";
+import frlQuonPhoto from "./assets/images/frl-quon-main.jpeg";
 const sponsors = [
   {
     name: "Urban Drip",
@@ -49,6 +51,68 @@ if (page === "j74l") {
 }
 if (page === "aj") {
   return <AJ onBack={() => setPage("home")} />;
+}
+if (page === "contact") {
+  return (
+    <main
+      style={{
+        backgroundColor: "#07111f",
+        color: "white",
+        minHeight: "100vh",
+        fontFamily: "Arial, sans-serif",
+      }}
+    >
+      <button
+        onClick={() => setPage("home")}
+        style={{
+          margin: "24px",
+          background: "transparent",
+          color: "white",
+          border: "none",
+          cursor: "pointer",
+          fontSize: "1rem",
+        }}
+      >
+        ← Back
+      </button>
+
+      <section className="contact-section">
+        <h2>CONTACT</h2>
+        <p className="contact-intro">Let's build something.</p>
+
+        <form
+          name="general-contact"
+          method="POST"
+          data-netlify="true"
+          className="contact-form"
+        >
+          <input type="hidden" name="form-name" value="general-contact" />
+
+          <input type="text" name="name" placeholder="Name" required />
+          <input type="email" name="email" placeholder="Email" required />
+          <input type="tel" name="phone" placeholder="Phone" />
+
+          <select name="inquiry" defaultValue="" required>
+            <option value="" disabled>I'm contacting about...</option>
+            <option value="business">Business / Sponsorship</option>
+            <option value="artist">Artist Opportunity</option>
+            <option value="production">Production / Content</option>
+            <option value="events">Events</option>
+            <option value="other">Other</option>
+          </select>
+
+          <textarea
+            name="message"
+            placeholder="Tell us what you're working on..."
+            rows="5"
+            required
+          />
+
+          <button type="submit">SEND</button>
+        </form>
+      </section>
+    </main>
+  );
 }
 return (
     <main
@@ -93,11 +157,13 @@ boxSizing: "border-box",
               fontSize: "1rem",
             }}
           >
-            <span>Home</span>
-            <span>Artists</span>
-            <span>Media</span>
-            <span>Booking</span>
-            <span>Contact</span>
+          <span onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>Home</span>
+<span onClick={() => document.getElementById("artists")?.scrollIntoView({ behavior: "smooth" })}>Artists</span>
+<span onClick={() => document.getElementById("media")?.scrollIntoView({ behavior: "smooth" })}>Media</span>
+<span onClick={() => document.getElementById("developing")?.scrollIntoView({ behavior: "smooth" })}>
+  Developing
+</span>
+<span onClick={() => setPage("contact")}>Contact</span>
           </div>
         </nav>
      <Hero />
@@ -199,6 +265,33 @@ boxSizing: "border-box",
     </div>
   </div>
 </section>
+ <section id="developing" className="developing-section">
+  <h2>DEVELOPING</h2>
+
+  <div className="developing-grid">
+    <a
+      href="https://www.instagram.com/gotdamnlonnie/"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="developing-card"
+    >
+      <img src={lonnie808Photo} alt="Lonnie808" />
+      <h3>LONNIE808</h3>
+      <p>@gotdamnlonnie</p>
+    </a>
+    <a
+  href="https://www.instagram.com/frl.quon/"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="developing-card"
+>
+  <img src={frlQuonPhoto} alt="FRL Quon" />
+  <h3>FRL QUON</h3>
+  <p>@frl.quon</p>
+</a>
+  </div>
+</section>    
+     
      <section id="media">
   <h2>Media</h2>
 <div className="media-grid">
@@ -245,6 +338,8 @@ boxSizing: "border-box",
     </div>
   </div>
 </section>
+
+
      
       </div>
     </main>
