@@ -196,7 +196,13 @@ boxSizing: "border-box",
      <div className="artist-grid">
 <div
   className="artist-card karson-card"
-  onClick={() => setPage("karson")}
+  onClick={() => {
+  window.gtag?.("event", "page_view", {
+    page_title: "Karson Blu",
+    page_path: "/karson-blu",
+  });
+  setPage("karson");
+}}
 >
   <img
     src={karsonLogo}
@@ -210,7 +216,16 @@ boxSizing: "border-box",
     className="artist-photo karson-photo"
   />
 </div>
-<div className="artist-card kt-card" onClick={() => setPage("ktmello")}>
+<div
+  className="artist-card kt-card"
+  onClick={() => {
+    window.gtag?.("event", "page_view", {
+      page_title: "KT Mello",
+      page_path: "/kt-mello",
+    });
+    setPage("ktmello");
+  }}
+>
   <img
   src={ktMelloLogo}
   alt="KT Mello"
@@ -222,7 +237,16 @@ boxSizing: "border-box",
   className="artist-photo kt-photo"
 />
 </div>
-<div className="artist-card jay-card" onClick={() => setPage("jay2x")}>
+<div
+  className="artist-card jay-card"
+  onClick={() => {
+    window.gtag?.("event", "page_view", {
+      page_title: "Jay2X",
+      page_path: "/jay2x",
+    });
+    setPage("jay2x");
+  }}
+>
  <img
   src={jay2xLogo}
   alt="Jay2X"
@@ -235,7 +259,16 @@ boxSizing: "border-box",
 />
 </div>
 
-<div className="artist-card j74l-card" onClick={() => setPage("j74l")}>
+<div
+  className="artist-card j74l-card"
+  onClick={() => {
+    window.gtag?.("event", "page_view", {
+      page_title: "J74L",
+      page_path: "/j74l",
+    });
+    setPage("j74l");
+  }}
+>
   <img
     src={j74lLogo}
     alt="J74L"
@@ -255,10 +288,16 @@ boxSizing: "border-box",
   <h2>MEET THE KREW</h2>
 
   <div className="krew-grid">
-    <div
-      className="krew-card"
-      onClick={() => setPage("aj")}
-    >
+   <div
+  className="krew-card"
+  onClick={() => {
+    window.gtag?.("event", "page_view", {
+      page_title: "AJ Harris",
+      page_path: "/aj-harris",
+    });
+    setPage("aj");
+  }}
+>
       <h3>AJ HARRIS</h3>
       <p>Founder • Manager • Creative Director</p>
       <span>The guy behind Blu's Krew.</span>
