@@ -111,6 +111,75 @@ if (page === "contact") {
           <button type="submit">SEND</button>
         </form>
       </section>
+      <section id="standard-guest-list" className="contact-section">
+  <h2>THE STANDARD</h2>
+  <p className="contact-intro">
+    Join the guest list. Leave the streetwear in the streets.
+  </p>
+
+  <form
+    name="standard-guest-list"
+    method="POST"
+    data-netlify="true"
+    className="contact-form"
+  >
+    <input
+      type="hidden"
+      name="form-name"
+      value="standard-guest-list"
+    />
+
+    <input
+      type="text"
+      name="name"
+      placeholder="First & Last Name"
+      required
+    />
+
+    <input
+      type="tel"
+      name="phone"
+      placeholder="Phone"
+      required
+    />
+
+    <input
+      type="email"
+      name="email"
+      placeholder="Email"
+      required
+    />
+
+    <input
+      type="text"
+      name="instagram"
+      placeholder="Instagram @"
+    />
+
+    <input
+      type="date"
+      name="birthday"
+      required
+    />
+
+    <input
+      type="text"
+      name="host"
+      placeholder="Who invited you? / Host"
+    />
+
+    <label>
+      <input
+        type="checkbox"
+        name="future-events"
+        value="yes"
+      />
+      Keep me updated about future The Standard events.
+    </label>
+
+    <button type="submit">JOIN THE GUEST LIST</button>
+  </form>
+</section>
     </main>
   );
 }
