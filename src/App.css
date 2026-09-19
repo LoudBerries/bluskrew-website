@@ -1400,3 +1400,162 @@ nav span {
   cursor: pointer;
 }
 
+/* BLU CHEK RECORD REVIEWS */
+
+.review-page {
+  min-height: 100vh;
+  background: #07111f;
+  color: white;
+  padding: 40px 20px 80px;
+}
+
+.review-back {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  color: white;
+  padding: 10px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-bottom: 45px;
+}
+
+.review-hero,
+.review-details,
+.review-submit {
+  width: min(900px, 100%);
+  margin: 0 auto;
+}
+
+.review-hero {
+  text-align: center;
+  padding: 40px 0 65px;
+}
+
+.review-hero > p:first-child {
+  text-transform: uppercase;
+  letter-spacing: 6px;
+  font-weight: 700;
+  opacity: 0.7;
+}
+
+.review-hero h1 {
+  font-size: clamp(42px, 8vw, 82px);
+  line-height: 0.95;
+  margin: 15px 0 25px;
+}
+
+.review-hero h2 {
+  font-size: 24px;
+  margin-bottom: 30px;
+}
+
+.review-hero p {
+  max-width: 700px;
+  margin: 0 auto 18px;
+  line-height: 1.7;
+}
+
+.review-hero strong {
+  display: block;
+  margin-top: 30px;
+  font-size: 20px;
+}
+
+.review-details {
+  padding: 60px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.review-details > h2,
+.review-submit > h2 {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 35px;
+}
+
+.review-details-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.review-details-grid > div {
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  padding: 25px;
+}
+
+.review-details-grid h3 {
+  margin-top: 0;
+}
+
+.review-disclaimer {
+  text-align: center;
+  max-width: 750px;
+  margin: 40px auto 0;
+  line-height: 1.7;
+}
+
+.review-submit {
+  padding-top: 65px;
+}
+
+.review-submit > p {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.review-submit .contact-form {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.review-submit .contact-form input,
+.review-submit .contact-form textarea {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.review-payment {
+  margin: 30px 0;
+  padding: 25px;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+}
+
+.review-payment h3 {
+  margin-top: 0;
+  font-size: 26px;
+}
+
+.review-pay-button {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 14px 24px;
+  background: white;
+  color: #07111f;
+  text-decoration: none;
+  font-weight: 800;
+  border-radius: 8px;
+}
+
+@media (max-width: 700px) {
+  .review-details-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .review-page {
+    padding: 25px 16px 60px;
+  }
+
+  .review-hero {
+    padding-top: 25px;
+  }
+}
+.review-hero h1,
+.review-hero h2,
+.review-submit h2 {
+  color: white;
+}
