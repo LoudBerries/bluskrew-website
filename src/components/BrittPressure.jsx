@@ -1,8 +1,11 @@
+import brittPressureHero from "../assets/images/britt-pressure-hero.png";
+
 export default function BrittPressure({ onBack }) {
   return (
     <main className="artist-profile britt-pressure-profile">
       <button className="artist-back" onClick={onBack}>← Back</button>
       <section className="artist-profile-hero">
+        <img src={brittPressureHero} alt="Britt Pressure" className="artist-profile-hero-image" />
         <div className="artist-profile-copy">
           <p className="artist-eyebrow">ARTIST DEVELOPMENT</p>
           <h1>BRITT PRESSURE</h1>
