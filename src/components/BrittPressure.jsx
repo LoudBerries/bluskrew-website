@@ -14,6 +14,10 @@ export default function BrittPressure({ onBack }) {
             visuals, rollout, and live presentation while keeping her identity
             at the center of the work.
           </p>
+          <a className="artist-profile-button" href="https://www.instagram.com/bigbrittpressure/" target="_blank" rel="noopener noreferrer">@BIGBRITTPRESSURE</a>
+        </div>
+        <div className="britt-profile-photo-wrap">
+          <img className="britt-profile-photo" src="/britt-pressure-profile.jpg" alt="Britt Pressure" />
         </div>
       </section>
       <section className="artist-profile-section">
