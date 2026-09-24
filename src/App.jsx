@@ -21,6 +21,7 @@ import urbanDripLogo from "./assets/images/urban-drip-logo.jpeg";
 import loudberriesLogo from "./assets/images/loudberries-logo.jpeg";
 import lonnie808Photo from "./assets/images/lonnie808-main.jpeg";
 import frlQuonPhoto from "./assets/images/frl-quon-main.jpeg";
+import brittPressurePhoto from "./assets/images/britt-pressure-profile.png";
 import BluChekReviews from "./components/BluChekReviews";
 const sponsors = [
   {
@@ -397,6 +398,7 @@ boxSizing: "border-box",
         setPage("britt-pressure");
       }}
     >
+      <img src={brittPressurePhoto} alt="Britt Pressure" />
       <h3>BRITT PRESSURE</h3>
       <p>R&B Artist • Signed Artist Development</p>
       <span>VIEW ARTIST PROFILE</span>
