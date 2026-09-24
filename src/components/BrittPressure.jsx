@@ -1,7 +1,7 @@
 import brittPressureHero from "../assets/images/britt-pressure-hero.png";
 import "./BrittPressure.css";
 
-export default function BrittPressure({ onBack }) {
+export default function BrittPressure({ onBack, onBook }) {
   return (
     <main className="artist-profile britt-pressure-profile">
       <button className="artist-back" onClick={onBack}>← Back</button>
@@ -37,7 +37,7 @@ export default function BrittPressure({ onBack }) {
       </section>
       <section className="artist-profile-section">
         <p className="artist-eyebrow">BOOKING</p>
-        <a className="artist-profile-button" href="mailto:booking@bluskrew.media">BOOK BRITT PRESSURE</a>
+        <button type="button" className="artist-profile-button" onClick={onBook}>BOOK BRITT PRESSURE</button>
       </section>
       <section className="artist-profile-section britt-video-section">
         <p className="artist-eyebrow">OFFICIAL VIDEO</p>
