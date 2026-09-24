@@ -1,7 +1,10 @@
+import { useState } from "react";
 import brittPressureHero from "../assets/images/britt-pressure-hero.png";
 import "./BrittPressure.css";
 
-export default function BrittPressure({ onBack, onBook }) {
+export default function BrittPressure({ onBack }) {
+  const [showBooking, setShowBooking] = useState(false);
+
   return (
     <main className="artist-profile britt-pressure-profile">
       <button className="artist-back" onClick={onBack}>← Back</button>
@@ -37,7 +40,26 @@ export default function BrittPressure({ onBack, onBook }) {
       </section>
       <section className="artist-profile-section">
         <p className="artist-eyebrow">BOOKING</p>
-        <button type="button" className="artist-profile-button" onClick={onBook}>BOOK BRITT PRESSURE</button>
+        <button type="button" className="artist-profile-button" onClick={() => setShowBooking(!showBooking)}>BOOK BRITT PRESSURE</button>
+        {showBooking && (
+          <section className="karson-booking">
+            <h2>BOOK BRITT PRESSURE</h2>
+            <form className="booking-form" name="britt-pressure-booking" method="POST" data-netlify="true">
+              <input type="hidden" name="form-name" value="britt-pressure-booking" />
+              <input type="hidden" name="artist" value="Britt Pressure" />
+              <input type="text" name="name" placeholder="YOUR NAME" required />
+              <input type="email" name="email" placeholder="EMAIL" required />
+              <input type="tel" name="phone" placeholder="PHONE" />
+              <input type="text" name="cityState" placeholder="CITY / STATE" />
+              <input type="date" name="eventDate" />
+              <input type="text" name="venue" placeholder="VENUE" />
+              <input type="text" name="eventType" placeholder="EVENT TYPE" />
+              <input type="text" name="budget" placeholder="BUDGET" />
+              <textarea name="eventDetails" placeholder="TELL US ABOUT THE EVENT"></textarea>
+              <button type="submit" className="booking-submit">SUBMIT BOOKING REQUEST</button>
+            </form>
+          </section>
+        )}
       </section>
       <section className="artist-profile-section britt-video-section">
         <p className="artist-eyebrow">OFFICIAL VIDEO</p>
