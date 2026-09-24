@@ -24,8 +24,16 @@ export default function BrittPressure({ onBack }) {
       <section className="artist-profile-section">
         <p className="artist-eyebrow">LATEST RELEASE</p>
         <h2>FOUND ME</h2>
-        <p>Listen to Britt Pressure's latest release.</p>
-        <a className="artist-profile-button" href="https://music.apple.com/us/album/found-me/6804337202?i=6804337203" target="_blank" rel="noopener noreferrer">LISTEN TO FOUND ME</a>
+        <p>Listen to Britt Pressure's latest release without leaving Blu's Krew.</p>
+        <iframe
+          title="Britt Pressure - Found Me on Apple Music"
+          allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write"
+          frameBorder="0"
+          height="175"
+          style={{ width: "100%", maxWidth: "660px", overflow: "hidden", borderRadius: "10px" }}
+          sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation-by-user-activation"
+          src="https://embed.music.apple.com/us/album/found-me/6804337202?i=6804337203"
+        />
       </section>
       <section className="artist-profile-section">
         <p className="artist-eyebrow">BOOKING</p>
