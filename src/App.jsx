@@ -5,6 +5,7 @@ import KTMello from "./components/KTMello";
 import Jay2X from "./components/Jay2X";
 import J74L from "./components/J74L";
 import AJ from "./components/aj";
+import BrittPressure from "./components/BrittPressure";
 import "./App.css";
 import karsonLogo from './assets/images/karson-blu-logo.jpg.jpeg'
 import karsonPhoto from "./assets/images/karson-photo.png";
@@ -20,8 +21,8 @@ import urbanDripLogo from "./assets/images/urban-drip-logo.jpeg";
 import loudberriesLogo from "./assets/images/loudberries-logo.jpeg";
 import lonnie808Photo from "./assets/images/lonnie808-main.jpeg";
 import frlQuonPhoto from "./assets/images/frl-quon-main.jpeg";
+import brittPressurePhoto from "./assets/images/britt-pressure-profile.png";
 import BluChekReviews from "./components/BluChekReviews";
-import KrewLogin from "./components/KrewLogin";
 const sponsors = [
   {
     name: "Urban Drip",
@@ -35,9 +36,7 @@ const sponsors = [
   },
 ];
 export default function App() {
-  const [page, setPage] = React.useState(
-  window.location.pathname === "/krew" ? "krew-login" : "home"
-);
+  const [page, setPage] = React.useState("home");
   const [shopReturnPage, setShopReturnPage] = React.useState("home");
   const [showMusicVideos, setShowMusicVideos] = React.useState(false);
 if (page === "shop") return <Shop onBack={() => setPage(shopReturnPage)} />;
@@ -56,12 +55,13 @@ if (page === "j74l") {
 if (page === "aj") {
   return <AJ onBack={() => setPage("home")} />;
 }
+if (page === "britt-pressure") {
+  return <BrittPressure onBack={() => setPage("home")} />;
+}
 if (page === "blu-chek-reviews") {
   return <BluChekReviews onBack={() => setPage("home")} />;
   }
-if (page === "krew-login") {
-  return <KrewLogin onBack={() => setPage("home")} />;
-}if (page === "contact") {
+if (page === "contact") {
   return (
     <main
       style={{
@@ -238,8 +238,8 @@ boxSizing: "border-box",
           <span onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>Home</span>
 <span onClick={() => document.getElementById("artists")?.scrollIntoView({ behavior: "smooth" })}>Artists</span>
 <span onClick={() => document.getElementById("media")?.scrollIntoView({ behavior: "smooth" })}>Media</span>
-<span onClick={() => document.getElementById("developing")?.scrollIntoView({ behavior: "smooth" })}>
-  Developing
+<span onClick={() => document.getElementById("artist-development")?.scrollIntoView({ behavior: "smooth" })}>
+  Artist Development
 </span>
 <span onClick={() => setPage("contact")}>Contact</span>
           </div>
@@ -382,9 +382,30 @@ boxSizing: "border-box",
     </div>
   </div>
 </section>
- <section id="developing" className="developing-section">
-  <h2>DEVELOPING</h2>
+ <section id="artist-development" className="developing-section">
+  <h2>ARTIST DEVELOPMENT</h2>
+  <p className="contact-intro">Signed artists building the next chapter with Blu's Krew.</p>
 
+  <div className="developing-grid">
+    <button
+      type="button"
+      className="developing-card"
+      onClick={() => {
+        window.gtag?.("event", "page_view", {
+          page_title: "Britt Pressure",
+          page_path: "/britt-pressure",
+        });
+        setPage("britt-pressure");
+      }}
+    >
+      <img src={brittPressurePhoto} alt="Britt Pressure" />
+      <h3>BRITT PRESSURE</h3>
+      <p>R&B Artist • Signed Artist Development</p>
+      <span>VIEW ARTIST PROFILE</span>
+    </button>
+  </div>
+
+  <h3>DEVELOPING TALENT</h3>
   <div className="developing-grid">
     <a
       href="https://www.instagram.com/gotdamnlonnie/"
@@ -461,7 +482,7 @@ boxSizing: "border-box",
   style={{ cursor: "pointer" }}
 >
   <h3>Blu Chek Record Reviews</h3>
-  <p>$50 professional record assessment. Submit your record.</p>
+  <p>$50 professional record assessment. Valid or Not Valid?</p>
 </div>
   </div>
 </section>
