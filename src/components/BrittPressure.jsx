@@ -25,7 +25,7 @@ export default function BrittPressure({ onBack }) {
         <p className="artist-eyebrow">LATEST RELEASE</p>
         <h2>FOUND ME</h2>
         <p>Listen to Britt Pressure's latest release.</p>
-        <p className="artist-link-pending">Official streaming link will be connected here.</p>
+        <a className="artist-profile-button" href="https://music.apple.com/us/album/found-me/6804337202?i=6804337203" target="_blank" rel="noopener noreferrer">LISTEN TO FOUND ME</a>
       </section>
       <section className="artist-profile-section">
         <p className="artist-eyebrow">BOOKING</p>
