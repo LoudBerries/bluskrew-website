@@ -1,4 +1,5 @@
 import brittPressureHero from "../assets/images/britt-pressure-hero.png";
+import "./BrittPressure.css";
 
 export default function BrittPressure({ onBack }) {
   return (
@@ -10,14 +11,14 @@ export default function BrittPressure({ onBack }) {
           <p className="artist-eyebrow">ARTIST DEVELOPMENT</p>
           <h1>BRITT PRESSURE</h1>
           <p className="artist-role">R&B Artist • Signed Artist Development</p>
-          <p>
+          <a className="artist-instagram" href="https://www.instagram.com/bigbrittpressure/" target="_blank" rel="noopener noreferrer">@BIGBRITTPRESSURE</a>
+          <p className="artist-bio">
             Britt Pressure is an emerging R&B artist building her catalog around
             honest songwriting, emotion, resilience, and growth. Her artist
             development with Blu's Krew is focused on sharpening the music,
             visuals, rollout, and live presentation while keeping her identity
             at the center of the work.
           </p>
-          <a className="artist-profile-button" href="https://www.instagram.com/bigbrittpressure/" target="_blank" rel="noopener noreferrer">@BIGBRITTPRESSURE</a>
         </div>
       </section>
       <section className="artist-profile-section">
