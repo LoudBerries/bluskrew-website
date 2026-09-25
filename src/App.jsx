@@ -5,7 +5,6 @@ import KTMello from "./components/KTMello";
 import Jay2X from "./components/Jay2X";
 import J74L from "./components/J74L";
 import AJ from "./components/aj";
-import BrittPressure from "./components/BrittPressure";
 import "./App.css";
 import karsonLogo from './assets/images/karson-blu-logo.jpg.jpeg'
 import karsonPhoto from "./assets/images/karson-photo.png";
@@ -21,7 +20,6 @@ import urbanDripLogo from "./assets/images/urban-drip-logo.jpeg";
 import loudberriesLogo from "./assets/images/loudberries-logo.jpeg";
 import lonnie808Photo from "./assets/images/lonnie808-main.jpeg";
 import frlQuonPhoto from "./assets/images/frl-quon-main.jpeg";
-import brittPressurePhoto from "./assets/images/britt-pressure-profile.png";
 import BluChekReviews from "./components/BluChekReviews";
 const sponsors = [
   {
@@ -54,9 +52,6 @@ if (page === "j74l") {
 }
 if (page === "aj") {
   return <AJ onBack={() => setPage("home")} />;
-}
-if (page === "britt-pressure") {
-  return <BrittPressure onBack={() => setPage("home")} />;
 }
 if (page === "blu-chek-reviews") {
   return <BluChekReviews onBack={() => setPage("home")} />;
@@ -387,22 +382,7 @@ boxSizing: "border-box",
   <p className="contact-intro">Signed artists building the next chapter with Blu's Krew.</p>
 
   <div className="developing-grid">
-    <button
-      type="button"
-      className="developing-card"
-      onClick={() => {
-        window.gtag?.("event", "page_view", {
-          page_title: "Britt Pressure",
-          page_path: "/britt-pressure",
-        });
-        setPage("britt-pressure");
-      }}
-    >
-      <img src={brittPressurePhoto} alt="Britt Pressure" />
-      <h3>BRITT PRESSURE</h3>
-      <p>R&B Artist • Signed Artist Development</p>
-      <span>VIEW ARTIST PROFILE</span>
-    </button>
+    
   </div>
 
   <h3>DEVELOPING TALENT</h3>
