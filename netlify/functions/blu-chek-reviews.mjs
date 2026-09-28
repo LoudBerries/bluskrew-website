@@ -1,16 +1,16 @@
 import { getStore } from "@netlify/blobs";
 
-const reviews = getStore({
-  name: "blu-chek-reviews",
-  consistency: "strong",
-});
-
-const artwork = getStore({
-  name: "blu-chek-artwork",
-  consistency: "strong",
-});
-
 export default async (request) => {
+  const reviews = getStore({
+    name: "blu-chek-reviews",
+    consistency: "strong",
+  });
+
+  const artwork = getStore({
+    name: "blu-chek-artwork",
+    consistency: "strong",
+  });
+
   if (request.method === "GET") {
     const url = new URL(request.url);
     const artworkKey = url.searchParams.get("artwork");
@@ -51,31 +51,32 @@ export default async (request) => {
 
     return Response.json(publishedReviews);
   }
-if (request.method === "DELETE") {
-  const suppliedKey = request.headers.get("x-blu-chek-key");
-  const adminKey = process.env.BLU_CHEK_ADMIN_KEY;
 
-  if (!adminKey || suppliedKey !== adminKey) {
-    return Response.json(
-      { error: "Unauthorized" },
-      { status: 401 }
-    );
+  if (request.method === "DELETE") {
+    const suppliedKey = request.headers.get("x-blu-chek-key");
+    const adminKey = process.env.BLU_CHEK_ADMIN_KEY;
+
+    if (!adminKey || suppliedKey !== adminKey) {
+      return Response.json(
+        { error: "Unauthorized" },
+        { status: 401 }
+      );
+    }
+
+    const url = new URL(request.url);
+    const id = url.searchParams.get("id");
+
+    if (!id) {
+      return Response.json(
+        { error: "Review ID is required." },
+        { status: 400 }
+      );
+    }
+
+    await reviews.delete(`reviews/${id}`);
+
+    return Response.json({ success: true });
   }
-
-  const url = new URL(request.url);
-  const id = url.searchParams.get("id");
-
-  if (!id) {
-    return Response.json(
-      { error: "Review ID is required." },
-      { status: 400 }
-    );
-  }
-
-  await reviews.delete(`reviews/${id}`);
-
-  return Response.json({ success: true });
-}
 
   if (request.method === "POST") {
     const suppliedKey = request.headers.get("x-blu-chek-key");
@@ -156,7 +157,7 @@ if (request.method === "DELETE") {
   return new Response("Method not allowed", {
     status: 405,
     headers: {
-      Allow: "GET, POST",
+      Allow: "GET, POST, DELETE",
     },
   });
 };
