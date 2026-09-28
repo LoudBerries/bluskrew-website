@@ -1,26 +1,29 @@
 import { useEffect, useState } from "react";
 
+const permanentReviews = [
+  {
+    id: "fatboi-skrap-eat-2-live",
+    artist: "FAT BOI SKRAP",
+    title: "EAT 2 LIVE",
+    review: "GROWN MAN MUSIC. Standouts: Came From Pain, Fly Shit Only, Hate On Me, Flowers For Kyia, and All On Me. Bragging Rights received the VALID stamp. Good album. One valid track.",
+    verdict: "BRAGGING RIGHTS — VALID",
+    publishedAt: "2026-09-20T12:00:00.000Z",
+  },
+];
+
 export default function PublishedBluChekReviews() {
   const [reviews, setReviews] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState("");
 
   useEffect(() => {
     async function loadReviews() {
       try {
-        const response = await fetch(
-          "/.netlify/functions/blu-chek-reviews"
-        );
-
-        if (!response.ok) {
-          throw new Error("Could not load reviews.");
-        }
-
+        const response = await fetch("/.netlify/functions/blu-chek-reviews");
+        if (!response.ok) throw new Error("Could not load reviews.");
         const data = await response.json();
         setReviews(Array.isArray(data) ? data : []);
       } catch (error) {
         console.error(error);
-        setError("Reviews are temporarily unavailable.");
       } finally {
         setLoading(false);
       }
@@ -29,38 +32,15 @@ export default function PublishedBluChekReviews() {
     loadReviews();
   }, []);
 
-  if (loading) {
-    return (
-      <section className="published-reviews">
-        <h2>BLU CHEK REVIEWS</h2>
-        <p>Loading reviews...</p>
-      </section>
-    );
-  }
+  const dynamicReviews = reviews.filter(
+    (item) =>
+      !(
+        String(item.artist || "").toLowerCase().includes("skrap") &&
+        String(item.title || "").toLowerCase() === "eat 2 live"
+      )
+  );
 
-  if (error) {
-    return (
-      <section className="published-reviews">
-        <div className="published-reviews-heading">
-          <p>VALID OR NOT VALID?</p>
-          <h2>BLU CHEK REVIEWS</h2>
-        </div>
-        <p>{error}</p>
-      </section>
-    );
-  }
-
-  if (reviews.length === 0) {
-    return (
-      <section className="published-reviews">
-        <div className="published-reviews-heading">
-          <p>VALID OR NOT VALID?</p>
-          <h2>BLU CHEK REVIEWS</h2>
-        </div>
-        <p>No published reviews yet.</p>
-      </section>
-    );
-  }
+  const allReviews = [...permanentReviews, ...dynamicReviews];
 
   return (
     <section className="published-reviews">
@@ -70,7 +50,7 @@ export default function PublishedBluChekReviews() {
       </div>
 
       <div className="published-reviews-grid">
-        {reviews.map((item) => (
+        {allReviews.map((item) => (
           <article className="published-review-card" key={item.id}>
             {item.artworkUrl && (
               <img
@@ -81,16 +61,21 @@ export default function PublishedBluChekReviews() {
             )}
 
             <div className="published-review-content">
-              <p className="published-review-rating">
-                {"✓".repeat(Math.floor(Number(item.rating))) + (Number(item.rating) % 1 ? "½" : "")}
-              </p>
+              {item.rating && (
+                <p className="published-review-rating">
+                  {"✓".repeat(Math.floor(Number(item.rating))) +
+                    (Number(item.rating) % 1 ? "½" : "")}
+                </p>
+              )}
+
+              {item.verdict && (
+                <p className="published-review-rating">{item.verdict}</p>
+              )}
 
               <h3>{item.artist}</h3>
               <h4>{item.title}</h4>
 
-              <p className="published-review-copy">
-                {item.review}
-              </p>
+              <p className="published-review-copy">{item.review}</p>
 
               {item.mediaLink && (
                 <a
@@ -104,12 +89,16 @@ export default function PublishedBluChekReviews() {
               )}
 
               <p className="published-review-date">
-                {item.publishedAt ? new Date(item.publishedAt).toLocaleDateString() : ""}
+                {item.publishedAt
+                  ? new Date(item.publishedAt).toLocaleDateString()
+                  : ""}
               </p>
             </div>
           </article>
         ))}
       </div>
+
+      {loading && <p>Checking for newer reviews...</p>}
     </section>
   );
 }
