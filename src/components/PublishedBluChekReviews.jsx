@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 export default function PublishedBluChekReviews() {
   const [reviews, setReviews] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
 
   useEffect(() => {
     async function loadReviews() {
@@ -16,9 +17,10 @@ export default function PublishedBluChekReviews() {
         }
 
         const data = await response.json();
-        setReviews(data);
+        setReviews(Array.isArray(data) ? data : []);
       } catch (error) {
         console.error(error);
+        setError("Reviews are temporarily unavailable.");
       } finally {
         setLoading(false);
       }
@@ -36,8 +38,28 @@ export default function PublishedBluChekReviews() {
     );
   }
 
+  if (error) {
+    return (
+      <section className="published-reviews">
+        <div className="published-reviews-heading">
+          <p>VALID OR NOT VALID?</p>
+          <h2>BLU CHEK REVIEWS</h2>
+        </div>
+        <p>{error}</p>
+      </section>
+    );
+  }
+
   if (reviews.length === 0) {
-    return null;
+    return (
+      <section className="published-reviews">
+        <div className="published-reviews-heading">
+          <p>VALID OR NOT VALID?</p>
+          <h2>BLU CHEK REVIEWS</h2>
+        </div>
+        <p>No published reviews yet.</p>
+      </section>
+    );
   }
 
   return (
@@ -60,7 +82,7 @@ export default function PublishedBluChekReviews() {
 
             <div className="published-review-content">
               <p className="published-review-rating">
-              {"✓".repeat(Math.floor(Number(item.rating))) + (Number(item.rating) % 1 ? "½" : "")}
+                {"✓".repeat(Math.floor(Number(item.rating))) + (Number(item.rating) % 1 ? "½" : "")}
               </p>
 
               <h3>{item.artist}</h3>
@@ -82,7 +104,7 @@ export default function PublishedBluChekReviews() {
               )}
 
               <p className="published-review-date">
-                {new Date(item.publishedAt).toLocaleDateString()}
+                {item.publishedAt ? new Date(item.publishedAt).toLocaleDateString() : ""}
               </p>
             </div>
           </article>
