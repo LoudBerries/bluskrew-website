@@ -21,6 +21,7 @@ import loudberriesLogo from "./assets/images/loudberries-logo.jpeg";
 import lonnie808Photo from "./assets/images/lonnie808-main.jpeg";
 import frlQuonPhoto from "./assets/images/frl-quon-main.jpeg";
 import BluChekReviews from "./components/BluChekReviews";
+import BluChekPublisher from "./components/BluChekPublisher";
 const sponsors = [
   {
     name: "Urban Drip",
@@ -34,7 +35,11 @@ const sponsors = [
   },
 ];
 export default function App() {
-  const [page, setPage] = React.useState("home");
+const [page, setPage] = React.useState(() =>
+  window.location.pathname === "/blu-chek-publisher"
+    ? "blu-chek-publisher"
+    : "home"
+);
   const [shopReturnPage, setShopReturnPage] = React.useState("home");
   const [showMusicVideos, setShowMusicVideos] = React.useState(false);
 if (page === "shop") return <Shop onBack={() => setPage(shopReturnPage)} />;
@@ -56,6 +61,9 @@ if (page === "aj") {
 if (page === "blu-chek-reviews") {
   return <BluChekReviews onBack={() => setPage("home")} />;
   }
+  if (page === "blu-chek-publisher") {
+  return <BluChekPublisher onBack={() => setPage("home")} />;
+}
 if (page === "contact") {
   return (
     <main

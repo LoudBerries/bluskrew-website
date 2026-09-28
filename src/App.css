@@ -1559,3 +1559,118 @@ nav span {
 .review-submit h2 {
   color: white;
 }
+/* BLU CHEK PUBLISHED REVIEWS */
+
+.published-reviews {
+  width: 100%;
+  max-width: 1100px;
+  margin: 70px auto 0;
+  padding: 45px 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.published-reviews-heading {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.published-reviews-heading p {
+  margin: 0 0 8px;
+  font-size: 0.9rem;
+  letter-spacing: 4px;
+  color: #4da6ff;
+  font-weight: 700;
+}
+
+.published-reviews-heading h2 {
+  margin: 0;
+  color: white;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  letter-spacing: 2px;
+}
+
+.published-reviews-grid {
+  display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(280px, 520px));
+  gap: 24px;
+  justify-content: center;
+}
+
+.published-review-card {
+  overflow: hidden;
+  background: #07182b;
+  border: 1px solid rgba(77, 166, 255, 0.3);
+  border-radius: 16px;
+}
+
+.published-review-artwork {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+.published-review-content {
+  padding: 24px;
+}
+
+.published-review-rating {
+  margin: 0 0 16px;
+  color: #4da6ff;
+  font-size: 1.5rem;
+  font-weight: 900;
+  letter-spacing: 4px;
+}
+
+.published-review-content h3 {
+  margin: 0;
+  color: white;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+}
+
+.published-review-content h4 {
+  margin: 6px 0 20px;
+  color: #a9b8c9;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.published-review-copy {
+  color: #f4f7fa;
+  line-height: 1.7;
+  white-space: pre-wrap;
+}
+
+.published-review-link {
+  display: inline-block;
+  margin-top: 18px;
+  padding: 11px 18px;
+  background: #4da6ff;
+  color: #03101f;
+  border-radius: 8px;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.published-review-date {
+  margin: 20px 0 0;
+  color: #718399;
+  font-size: 0.8rem;
+}
+
+@media (max-width: 700px) {
+  .published-reviews {
+    margin-top: 45px;
+    padding: 35px 0;
+  }
+
+  .published-reviews-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .published-review-content {
+    padding: 20px;
+  }
+}

@@ -1,3 +1,4 @@
+import PublishedBluChekReviews from "./PublishedBluChekReviews";
 export default function BluChekReviews({ onBack }) {
   const scorecard = [
     ["SONG", "Writing, structure, performance and replay value"],
@@ -49,6 +50,7 @@ export default function BluChekReviews({ onBack }) {
           <button type="submit">SUBMIT RECORD</button>
         </form>
       </section>
+            <PublishedBluChekReviews />
     </main>
   );
 }
