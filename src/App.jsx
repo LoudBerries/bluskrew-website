@@ -13,7 +13,6 @@ import ktMelloPhoto from "./assets/images/kt-mello-photo.png";
 import jay2xLogo from "./assets/images/jay2x-logo.jpeg.jpeg";
 import jay2xPhoto from "./assets/images/jay2x-photo.png";
 import j74lLogo from "./assets/images/j74l-scales-logo.jpeg.jpeg";
-import karsonProfile from "./assets/images/karson-profile-blue.jpeg";
 import j74lPhoto from "./assets/images/j74l-photo.png";
 import Shop from "./components/Shop";
 import urbanDripLogo from "./assets/images/urban-drip-logo.jpeg";
@@ -34,35 +33,91 @@ const sponsors = [
     logo: loudberriesLogo,
   },
 ];
+const pathToPage = (pathname) => {
+  const path = pathname.replace(/\/+$/, "") || "/";
+
+  const routes = {
+    "/": "home",
+    "/karsonblu": "karson",
+    "/karson-blu": "karson",
+    "/ktmello": "ktmello",
+    "/kt-mello": "ktmello",
+    "/jay2x": "jay2x",
+    "/j74l": "j74l",
+    "/aj": "aj",
+    "/aj-harris": "aj",
+    "/shop": "shop",
+    "/contact": "contact",
+    "/blu-chek-reviews": "blu-chek-reviews",
+    "/blu-chek-publisher": "blu-chek-publisher",
+  };
+
+  return routes[path.toLowerCase()] || "home";
+};
+
+const pageToPath = {
+  home: "/",
+  karson: "/karsonblu",
+  ktmello: "/ktmello",
+  jay2x: "/jay2x",
+  j74l: "/j74l",
+  aj: "/aj",
+  shop: "/shop",
+  contact: "/contact",
+  "blu-chek-reviews": "/blu-chek-reviews",
+  "blu-chek-publisher": "/blu-chek-publisher",
+};
+
 export default function App() {
-const [page, setPage] = React.useState(() =>
-  window.location.pathname === "/blu-chek-publisher"
-    ? "blu-chek-publisher"
-    : "home"
-);
+  const [page, setPage] = React.useState(() =>
+    pathToPage(window.location.pathname)
+  );
   const [shopReturnPage, setShopReturnPage] = React.useState("home");
   const [showMusicVideos, setShowMusicVideos] = React.useState(false);
-if (page === "shop") return <Shop onBack={() => setPage(shopReturnPage)} />;
+
+  React.useEffect(() => {
+    const handlePopState = () => {
+      setPage(pathToPage(window.location.pathname));
+      window.scrollTo(0, 0);
+    };
+
+    window.addEventListener("popstate", handlePopState);
+    return () => window.removeEventListener("popstate", handlePopState);
+  }, []);
+
+  const navigate = React.useCallback((nextPage, options = {}) => {
+    const nextPath = pageToPath[nextPage] || "/";
+    const method = options.replace ? "replaceState" : "pushState";
+
+    if (window.location.pathname !== nextPath) {
+      window.history[method]({}, "", nextPath);
+    }
+
+    setPage(nextPage);
+    window.scrollTo(0, 0);
+  }, []);
+
+if (page === "shop") return <Shop onBack={() => navigate(shopReturnPage)} />;
   if (page === "karson") {
-return <KarsonBlu onBack={() => setPage("home")} onShop={() => { setShopReturnPage("karson"); setPage("shop"); }} />;
+return <KarsonBlu onBack={() => navigate("home")} onShop={() => { setShopReturnPage("karson"); navigate("shop"); }} />;
 }
  if (page === "ktmello") {
-return <KTMello onBack={() => setPage("home")} onShop={() => { setShopReturnPage("ktmello"); setPage("shop"); }} />;
+return <KTMello onBack={() => navigate("home")} onShop={() => { setShopReturnPage("ktmello"); navigate("shop"); }} />;
 }
 if (page === "jay2x") {
-  return <Jay2X onBack={() => setPage("home")} onShop={() => { setShopReturnPage("jay2x"); setPage("shop"); }} />;
+  return <Jay2X onBack={() => navigate("home")} onShop={() => { setShopReturnPage("jay2x"); navigate("shop"); }} />;
 }
 if (page === "j74l") {
-  return <J74L onBack={() => setPage("home")} onShop={() => { setShopReturnPage("j74l"); setPage("shop"); }} />;
+  return <J74L onBack={() => navigate("home")} onShop={() => { setShopReturnPage("j74l"); navigate("shop"); }} />;
 }
 if (page === "aj") {
-  return <AJ onBack={() => setPage("home")} />;
+  return <AJ onBack={() => navigate("home")} />;
 }
 if (page === "blu-chek-reviews") {
-  return <BluChekReviews onBack={() => setPage("home")} />;
+  return <BluChekReviews onBack={() => navigate("home")} />;
   }
   if (page === "blu-chek-publisher") {
-  return <BluChekPublisher onBack={() => setPage("home")} />;
+  return <BluChekPublisher onBack={() => navigate("home")} />;
 }
 if (page === "contact") {
   return (
@@ -75,7 +130,7 @@ if (page === "contact") {
       }}
     >
       <button
-        onClick={() => setPage("home")}
+        onClick={() => navigate("home")}
         style={{
           margin: "24px",
           background: "transparent",
@@ -238,13 +293,13 @@ boxSizing: "border-box",
               fontSize: "1rem",
             }}
           >
-          <span onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>Home</span>
+          <span onClick={() => { navigate("home"); window.scrollTo({ top: 0, behavior: "smooth" }); }}>Home</span>
 <span onClick={() => document.getElementById("artists")?.scrollIntoView({ behavior: "smooth" })}>Artists</span>
 <span onClick={() => document.getElementById("media")?.scrollIntoView({ behavior: "smooth" })}>Media</span>
 <span onClick={() => document.getElementById("artist-development")?.scrollIntoView({ behavior: "smooth" })}>
   Artist Development
 </span>
-<span onClick={() => setPage("contact")}>Contact</span>
+<span onClick={() => navigate("contact")}>Contact</span>
           </div>
         </nav>
      <Hero />
@@ -280,9 +335,9 @@ boxSizing: "border-box",
   onClick={() => {
   window.gtag?.("event", "page_view", {
     page_title: "Karson Blu",
-    page_path: "/karson-blu",
+    page_path: "/karsonblu",
   });
-  setPage("karson");
+  navigate("karson");
 }}
 >
   <img
@@ -302,9 +357,9 @@ boxSizing: "border-box",
   onClick={() => {
     window.gtag?.("event", "page_view", {
       page_title: "KT Mello",
-      page_path: "/kt-mello",
+      page_path: "/ktmello",
     });
-    setPage("ktmello");
+    navigate("ktmello");
   }}
 >
   <img
@@ -325,7 +380,7 @@ boxSizing: "border-box",
       page_title: "Jay2X",
       page_path: "/jay2x",
     });
-    setPage("jay2x");
+    navigate("jay2x");
   }}
 >
  <img
@@ -347,7 +402,7 @@ boxSizing: "border-box",
       page_title: "J74L",
       page_path: "/j74l",
     });
-    setPage("j74l");
+    navigate("j74l");
   }}
 >
   <img
@@ -374,9 +429,9 @@ boxSizing: "border-box",
   onClick={() => {
     window.gtag?.("event", "page_view", {
       page_title: "AJ Harris",
-      page_path: "/aj-harris",
+      page_path: "/aj",
     });
-    setPage("aj");
+    navigate("aj");
   }}
 >
       <h3>AJ HARRIS</h3>
@@ -465,7 +520,7 @@ boxSizing: "border-box",
       page_title: "Blu Chek Record Reviews",
       page_path: "/blu-chek-reviews",
     });
-    setPage("blu-chek-reviews");
+    navigate("blu-chek-reviews");
   }}
   style={{ cursor: "pointer" }}
 >
