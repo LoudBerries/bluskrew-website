@@ -48,6 +48,14 @@ export default function PublishedBluChekReviews() {
           {reviews.map((item) => (
             <details className="published-review-card published-review-collapsible" key={item.id}>
               <summary className="published-review-summary">
+                {item.artworkUrl && (
+                  <img
+                    src={item.artworkUrl}
+                    alt=""
+                    className="published-review-summary-artwork"
+                    aria-hidden="true"
+                  />
+                )}
                 <span className="published-review-summary-text">
                   <span className="published-review-summary-artist">{item.artist}</span>
                   <span className="published-review-summary-title">{item.title}</span>
