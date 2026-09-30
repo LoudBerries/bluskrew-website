@@ -1596,6 +1596,70 @@ nav span {
   justify-content: center;
 }
 
+.published-reviews-list {
+  display: grid;
+  gap: 14px;
+}
+
+.published-review-collapsible {
+  width: 100%;
+}
+
+.published-review-summary {
+  min-height: 74px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 16px 20px;
+  cursor: pointer;
+  list-style: none;
+  user-select: none;
+}
+
+.published-review-summary::-webkit-details-marker {
+  display: none;
+}
+
+.published-review-summary-text {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.published-review-summary-artist {
+  color: #4da6ff;
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.published-review-summary-title {
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.published-review-summary-arrow {
+  flex: 0 0 auto;
+  color: #4da6ff;
+  font-size: 1.7rem;
+  line-height: 1;
+  transition: transform 0.2s ease;
+}
+
+.published-review-collapsible[open] .published-review-summary-arrow {
+  transform: rotate(180deg);
+}
+
+.published-review-expanded {
+  border-top: 1px solid rgba(77, 166, 255, 0.2);
+}
+
+
 .published-review-card {
   overflow: hidden;
   background: #07182b;
