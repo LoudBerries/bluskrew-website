@@ -44,46 +44,56 @@ export default function PublishedBluChekReviews() {
       )}
 
       {!loading && !error && reviews.length > 0 && (
-        <div className="published-reviews-grid">
+        <div className="published-reviews-list">
           {reviews.map((item) => (
-            <article className="published-review-card" key={item.id}>
-              {item.artworkUrl && (
-                <img
-                  src={item.artworkUrl}
-                  alt={`${item.artist} ${item.title} cover artwork`}
-                  className="published-review-artwork"
-                />
-              )}
+            <details className="published-review-card published-review-collapsible" key={item.id}>
+              <summary className="published-review-summary">
+                <span className="published-review-summary-text">
+                  <span className="published-review-summary-artist">{item.artist}</span>
+                  <span className="published-review-summary-title">{item.title}</span>
+                </span>
+                <span className="published-review-summary-arrow" aria-hidden="true">⌄</span>
+              </summary>
 
-              <div className="published-review-content">
-                <p className="published-review-rating">
-                  {"✓".repeat(Math.floor(Number(item.rating))) +
-                    (Number(item.rating) % 1 ? "½" : "")}
-                </p>
-
-                <h3>{item.artist}</h3>
-                <h4>{item.title}</h4>
-
-                <p className="published-review-copy">{item.review}</p>
-
-                {item.mediaLink && (
-                  <a
-                    href={item.mediaLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="published-review-link"
-                  >
-                    LISTEN / WATCH
-                  </a>
+              <div className="published-review-expanded">
+                {item.artworkUrl && (
+                  <img
+                    src={item.artworkUrl}
+                    alt={`${item.artist} ${item.title} cover artwork`}
+                    className="published-review-artwork"
+                  />
                 )}
 
-                <p className="published-review-date">
-                  {item.publishedAt
-                    ? new Date(item.publishedAt).toLocaleDateString()
-                    : ""}
-                </p>
+                <div className="published-review-content">
+                  <p className="published-review-rating">
+                    {"✓".repeat(Math.floor(Number(item.rating))) +
+                      (Number(item.rating) % 1 ? "½" : "")}
+                  </p>
+
+                  <h3>{item.artist}</h3>
+                  <h4>{item.title}</h4>
+
+                  <p className="published-review-copy">{item.review}</p>
+
+                  {item.mediaLink && (
+                    <a
+                      href={item.mediaLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="published-review-link"
+                    >
+                      LISTEN / WATCH
+                    </a>
+                  )}
+
+                  <p className="published-review-date">
+                    {item.publishedAt
+                      ? new Date(item.publishedAt).toLocaleDateString()
+                      : ""}
+                  </p>
+                </div>
               </div>
-            </article>
+            </details>
           ))}
         </div>
       )}
