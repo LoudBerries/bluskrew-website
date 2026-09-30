@@ -1674,3 +1674,155 @@ nav span {
     padding: 20px;
   }
 }
+
+/* =========================
+   STICKY SITE NAV + BLU CHEK FEATURE
+   ========================= */
+
+.site-nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  min-height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 0 18px;
+  margin: 0 -20px;
+  background: rgba(7, 17, 31, 0.96);
+  border-bottom: 1px solid rgba(77, 166, 255, 0.22);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.site-nav-brand {
+  margin: 0;
+  color: #4da6ff;
+  font-size: 1.8rem;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.site-nav-links {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 24px;
+  font-size: 0.95rem;
+}
+
+.site-nav-links span {
+  cursor: pointer;
+  white-space: nowrap;
+  transition: color 0.2s ease;
+}
+
+.site-nav-links span:hover {
+  color: #4da6ff;
+}
+
+.site-nav-feature {
+  color: #4da6ff;
+  font-weight: 800;
+}
+
+.blu-chek-home-feature {
+  width: min(1100px, calc(100% - 40px));
+  margin: 28px auto 18px;
+  padding: 34px 38px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  background: linear-gradient(
+    135deg,
+    rgba(77, 166, 255, 0.13),
+    rgba(7, 24, 43, 0.88)
+  );
+  border: 1px solid rgba(77, 166, 255, 0.38);
+  border-radius: 16px;
+}
+
+.blu-chek-home-copy {
+  max-width: 760px;
+}
+
+.blu-chek-home-eyebrow {
+  margin: 0 0 8px;
+  color: #4da6ff;
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 4px;
+}
+
+.blu-chek-home-feature h2 {
+  margin: 0 0 12px;
+  color: white;
+  font-size: clamp(2rem, 5vw, 3.4rem);
+  letter-spacing: 1px;
+}
+
+.blu-chek-home-feature p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.82);
+  line-height: 1.65;
+}
+
+.blu-chek-home-button {
+  flex: 0 0 auto;
+  padding: 14px 22px;
+  border: 0;
+  border-radius: 9px;
+  background: #4da6ff;
+  color: #07111f;
+  font-weight: 900;
+  letter-spacing: 0.6px;
+  cursor: pointer;
+}
+
+.blu-chek-home-button:hover {
+  transform: translateY(-2px);
+}
+
+@media (max-width: 900px) {
+  .site-nav {
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px 12px;
+  }
+
+  .site-nav-links {
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px 16px;
+  }
+
+  .blu-chek-home-feature {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 28px 24px;
+  }
+
+  .blu-chek-home-button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .site-nav-brand {
+    font-size: 1.45rem;
+  }
+
+  .site-nav-links {
+    font-size: 0.82rem;
+    gap: 7px 12px;
+  }
+
+  .blu-chek-home-feature {
+    width: calc(100% - 20px);
+    margin-top: 16px;
+  }
+}
