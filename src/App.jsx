@@ -268,41 +268,41 @@ return (
 boxSizing: "border-box",
         }}
       >
-        <nav
-          style={{
-            height: "80px",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "space-between",
-          }}
-        >
-          <h1
-            style={{
-              fontSize: "2rem",
-              fontWeight: "700",
-              color: "#4da6ff",
-            }}
-          >
-            Blu's Krew
-          </h1>
+        <nav className="site-nav">
+          <h1 className="site-nav-brand">Blu's Krew</h1>
 
-          <div
-            style={{
-              display: "flex",
-              gap: "32px",
-              fontSize: "1rem",
-            }}
-          >
+          <div className="site-nav-links">
           <span onClick={() => { navigate("home"); window.scrollTo({ top: 0, behavior: "smooth" }); }}>Home</span>
 <span onClick={() => document.getElementById("artists")?.scrollIntoView({ behavior: "smooth" })}>Artists</span>
 <span onClick={() => document.getElementById("media")?.scrollIntoView({ behavior: "smooth" })}>Media</span>
 <span onClick={() => document.getElementById("artist-development")?.scrollIntoView({ behavior: "smooth" })}>
   Artist Development
 </span>
+<span className="site-nav-feature" onClick={() => navigate("blu-chek-reviews")}>Reviews</span>
+<span onClick={() => { setShopReturnPage("home"); navigate("shop"); }}>Shop</span>
 <span onClick={() => navigate("contact")}>Contact</span>
           </div>
         </nav>
      <Hero />
+
+     <section className="blu-chek-home-feature">
+       <div className="blu-chek-home-copy">
+         <p className="blu-chek-home-eyebrow">BLU CHEK</p>
+         <h2>RECORD REVIEWS</h2>
+         <p>
+           Valid or Not Valid? Independent music reviewed track by track,
+           with direct feedback from a management, marketing and audience perspective.
+         </p>
+       </div>
+       <button
+         type="button"
+         className="blu-chek-home-button"
+         onClick={() => navigate("blu-chek-reviews")}
+       >
+         READ THE REVIEWS
+       </button>
+     </section>
+
      <section className="sponsors-section">
   <p className="sponsors-label">SPONSORED BY</p>
 
