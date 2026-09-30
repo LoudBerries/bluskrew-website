@@ -11,6 +11,7 @@ export default function BluChekReviews({ onBack }) {
   return (
     <main className="review-page">
       <button className="review-back" onClick={onBack}>← Back</button>
+      <PublishedBluChekReviews />
       <section className="review-hero">
         <p>BLU CHEK</p>
         <h1>VALID OR NOT VALID?</h1>
@@ -50,7 +51,6 @@ export default function BluChekReviews({ onBack }) {
           <button type="submit">SUBMIT RECORD</button>
         </form>
       </section>
-            <PublishedBluChekReviews />
     </main>
   );
 }
