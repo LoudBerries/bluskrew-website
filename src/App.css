@@ -1617,6 +1617,15 @@ nav span {
   user-select: none;
 }
 
+.published-review-summary-artwork {
+  width: 58px;
+  height: 58px;
+  flex: 0 0 58px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid rgba(77, 166, 255, 0.3);
+}
+
 .published-review-summary::-webkit-details-marker {
   display: none;
 }
