@@ -1733,6 +1733,12 @@ nav span {
   font-size: 0.8rem;
 }
 
+.published-review-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
 @media (max-width: 700px) {
   .published-reviews {
     margin-top: 45px;
