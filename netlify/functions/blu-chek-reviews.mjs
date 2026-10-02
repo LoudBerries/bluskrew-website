@@ -20,21 +20,22 @@ export default async (request) => {
       const artworkKey = url.searchParams.get("artwork");
 
       if (artworkKey) {
-        const image = await artwork.get(artworkKey, {
+        const storedImage = await artwork.getWithMetadata(artworkKey, {
           type: "blob",
           consistency: "strong",
         });
 
-        if (!image) {
+        if (!storedImage) {
           return new Response("Artwork not found", {
             status: 404,
             headers: { "Cache-Control": "no-store" },
           });
         }
 
+        const image = storedImage.data;
         return new Response(image, {
           headers: {
-            "Content-Type": image.type || "image/jpeg",
+            "Content-Type": storedImage.metadata?.contentType || image.type || "image/jpeg",
             "Cache-Control": "public, max-age=3600",
           },
         });

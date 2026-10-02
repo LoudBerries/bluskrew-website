@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { SITE_URL, reviewPath } from "../../shared/review-links.mjs";
 
 export default function PublishedBluChekReviews() {
   const [reviews, setReviews] = useState([]);
@@ -82,6 +83,13 @@ export default function PublishedBluChekReviews() {
                   <h4>{item.title}</h4>
 
                   <p className="published-review-copy">{item.review}</p>
+
+                  <div className="published-review-actions">
+                    <a className="published-review-link" href={reviewPath(item)}>OPEN ARTICLE</a>
+                    <a className="published-review-link"
+                      href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(SITE_URL + reviewPath(item))}`}
+                      target="_blank" rel="noopener noreferrer">SHARE TO FACEBOOK</a>
+                  </div>
 
                   {item.mediaLink && (
                     <a
