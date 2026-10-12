@@ -1,5 +1,6 @@
 import React from "react";
 import Hero from "./components/Hero";
+import Events from "./components/Events";
 import KarsonBlu from "./components/KarsonBlu";
 import KTMello from "./components/KTMello";
 import Jay2X from "./components/Jay2X";
@@ -48,6 +49,7 @@ const pathToPage = (pathname) => {
     "/aj-harris": "aj",
     "/shop": "shop",
     "/contact": "contact",
+    "/events": "events",
     "/blu-chek-reviews": "blu-chek-reviews",
     "/blu-chek-publisher": "blu-chek-publisher",
   };
@@ -64,6 +66,7 @@ const pageToPath = {
   aj: "/aj",
   shop: "/shop",
   contact: "/contact",
+  events: "/events",
   "blu-chek-reviews": "/blu-chek-reviews",
   "blu-chek-publisher": "/blu-chek-publisher",
 };
@@ -119,6 +122,7 @@ if (page === "blu-chek-reviews") {
   if (page === "blu-chek-publisher") {
   return <BluChekPublisher onBack={() => navigate("home")} />;
 }
+if (page === "events") return <Events onBack={() => navigate("home")} />;
 if (page === "contact") {
   return (
     <main
@@ -280,6 +284,7 @@ boxSizing: "border-box",
 </span>
 <span className="site-nav-feature" onClick={() => navigate("blu-chek-reviews")}>Reviews</span>
 <span onClick={() => { setShopReturnPage("home"); navigate("shop"); }}>Shop</span>
+<span onClick={() => navigate("events")}>Events</span>
 <span onClick={() => navigate("contact")}>Contact</span>
           </div>
         </nav>
