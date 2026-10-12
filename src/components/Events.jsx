@@ -17,6 +17,7 @@ const events = [
     age: "21+",
     description:
       "One unforgettable night celebrating Big Homie AK: family, mentor, champion. The roast brings stories, laughs, and the community together, followed by a 90s dance party featuring DJ AK until close.",
+    flyer: "/images/roast-of-ak-flyer.jpg",
     ticketUrl: "https://www.etix.com/ticket/p/89115535/the-roast-of-big-homie-ak-minneapolis-the-cabooze",
     ticketLabel: "BUY TICKETS ON ETIX",
     extra: "Roast admission and dance party · Dance-party-only tickets also available",
@@ -25,6 +26,7 @@ const events = [
 ];
 
 export default function Events({ onBack }) {
+  const [unavailableFlyers, setUnavailableFlyers] = React.useState({});
   const upcoming = events.filter((event) => new Date(event.date).getTime() >= Date.now() - 86400000);
   const archived = events.filter((event) => new Date(event.date).getTime() < Date.now() - 86400000);
 
@@ -46,6 +48,7 @@ export default function Events({ onBack }) {
           <article className="bk-event-card" key={event.id}>
             <div className="bk-event-art" aria-label={event.title}>
               <div className="bk-event-haze" aria-hidden="true" />
+              {event.flyer && !unavailableFlyers[event.id] && <img className="bk-event-official-flyer" src={event.flyer} alt={`Official flyer for ${event.title}`} onError={() => setUnavailableFlyers((state) => ({ ...state, [event.id]: true }))} />}
               <span className="bk-event-presented">BLU'S KREW PRESENTS</span>
               <span className="bk-event-art-small">A NIGHT FOR THE LEGEND</span>
               <strong>THE ROAST<br /><em>OF BIG HOMIE</em><br />AK</strong>
