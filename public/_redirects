@@ -1,3 +1,5 @@
+/events /events/index.html 200
+/events/ /events/index.html 200
 /blu-chek-reviews /index.html 200
 /blu-chek-reviews/ /index.html 200
 /blu-chek-reviews/* /.netlify/functions/blu-chek-article?article=:splat 200
