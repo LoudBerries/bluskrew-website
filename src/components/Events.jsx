@@ -1,4 +1,5 @@
 import React from "react";
+import roastFlyer from "../assets/images/roast-of-ak-flyer.jpg";
 import "./Events.css";
 
 const events = [
@@ -17,7 +18,7 @@ const events = [
     age: "21+",
     description:
       "One unforgettable night celebrating Big Homie AK: family, mentor, champion. The roast brings stories, laughs, and the community together, followed by a 90s dance party featuring DJ AK until close.",
-    flyer: "/images/roast-of-ak-flyer.jpg",
+    flyer: roastFlyer,
     ticketUrl: "https://www.etix.com/ticket/p/89115535/the-roast-of-big-homie-ak-minneapolis-the-cabooze",
     ticketLabel: "BUY TICKETS ON ETIX",
     extra: "Roast admission and dance party · Dance-party-only tickets also available",
