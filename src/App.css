@@ -1791,13 +1791,13 @@ nav span {
   font-size: 0.95rem;
 }
 
-.site-nav-links span {
+.site-nav-links a {
   cursor: pointer;
   white-space: nowrap;
   transition: color 0.2s ease;
 }
 
-.site-nav-links span:hover {
+.site-nav-links a:hover {
   color: #4da6ff;
 }
 
@@ -1905,3 +1905,14 @@ nav span {
     margin-top: 16px;
   }
 }
+
+/* Conversion links retain the existing button and navigation styling. */
+.site-nav-links a { color: inherit; text-decoration: none; cursor: pointer; }
+.site-nav-links a.site-nav-feature { color: #4da6ff; }
+.site-nav-brand { color: inherit; text-decoration: none; }
+.blu-chek-home-button { display: inline-flex; align-items: center; justify-content: center; text-decoration: none; }
+.bk-home-actions { display: flex; flex-wrap: wrap; gap: 12px; margin: 20px 0 32px; }
+.bk-home-actions a { display: inline-flex; padding: 12px 18px; border: 1px solid rgba(77,166,255,.55); border-radius: 10px; color: white; text-decoration: none; font-weight: 700; }
+.bk-home-actions a:first-child { background: #2476c6; border-color: #2476c6; }
+.bk-home-actions a:hover, .bk-home-actions a:focus-visible { outline: 2px solid #4da6ff; outline-offset: 2px; }
+@media (max-width: 600px) { .bk-home-actions { flex-direction: column; } .bk-home-actions a { justify-content: center; } }
