@@ -1916,3 +1916,18 @@ nav span {
 .bk-home-actions a:first-child { background: #2476c6; border-color: #2476c6; }
 .bk-home-actions a:hover, .bk-home-actions a:focus-visible { outline: 2px solid #4da6ff; outline-offset: 2px; }
 @media (max-width: 600px) { .bk-home-actions { flex-direction: column; } .bk-home-actions a { justify-content: center; } }
+
+/* Mobile alignment: keep the Blu Chek action inside its card and center its contents. */
+@media (max-width: 900px) {
+  .blu-chek-home-feature { align-items: center; text-align: center; }
+  .blu-chek-home-copy { width: 100%; min-width: 0; }
+  .blu-chek-home-button { box-sizing: border-box; max-width: 100%; flex: 0 1 auto; }
+}
+@media (max-width: 600px) {
+  .blu-chek-home-feature { width: calc(100% - 32px); margin-left: auto; margin-right: auto; padding: 26px 18px; gap: 24px; }
+  .blu-chek-home-feature h2 { font-size: clamp(1.65rem, 7.5vw, 2.5rem); overflow-wrap: anywhere; }
+  .blu-chek-home-button { width: 100%; min-width: 0; padding: 14px 12px; }
+  .sponsors-section { box-sizing: border-box; width: 100%; padding-inline: 16px; }
+  .sponsors-grid { width: 100%; gap: 22px; }
+  .sponsor-card { box-sizing: border-box; max-width: 100%; }
+}
