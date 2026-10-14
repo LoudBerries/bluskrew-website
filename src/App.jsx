@@ -287,6 +287,11 @@ boxSizing: "border-box",
           </div>
         </nav>
      <Hero />
+     <div className="bk-home-actions" aria-label="Blu’s Krew quick actions">
+       <a href="/events">EVENT TICKETS</a>
+       <a href="/blu-chek-reviews">SUBMIT MUSIC FOR REVIEW</a>
+       <a href="/contact">BOOKINGS & PARTNERSHIPS</a>
+     </div>
 
      <section className="blu-chek-home-feature">
        <div className="blu-chek-home-copy">
