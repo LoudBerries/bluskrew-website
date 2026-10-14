@@ -273,19 +273,17 @@ boxSizing: "border-box",
         }}
       >
         <nav className="site-nav">
-          <h1 className="site-nav-brand">Blu's Krew</h1>
+          <a className="site-nav-brand" href="/">Blu's Krew</a>
 
           <div className="site-nav-links">
-          <span onClick={() => { navigate("home"); window.scrollTo({ top: 0, behavior: "smooth" }); }}>Home</span>
-<span onClick={() => document.getElementById("artists")?.scrollIntoView({ behavior: "smooth" })}>Artists</span>
-<span onClick={() => document.getElementById("media")?.scrollIntoView({ behavior: "smooth" })}>Media</span>
-<span onClick={() => document.getElementById("artist-development")?.scrollIntoView({ behavior: "smooth" })}>
-  Artist Development
-</span>
-<span className="site-nav-feature" onClick={() => navigate("blu-chek-reviews")}>Reviews</span>
-<span onClick={() => { setShopReturnPage("home"); navigate("shop"); }}>Shop</span>
-<span onClick={() => navigate("events")}>Events</span>
-<span onClick={() => navigate("contact")}>Contact</span>
+          <a href="/">Home</a>
+<a href="/#artists">Artists</a>
+<a href="/#media">Media</a>
+<a href="/#artist-development">Artist Development</a>
+<a className="site-nav-feature" href="/blu-chek-reviews">Reviews</a>
+<a href="/shop">Shop</a>
+<a href="/events">Events</a>
+<a href="/contact">Contact</a>
           </div>
         </nav>
      <Hero />
@@ -299,13 +297,7 @@ boxSizing: "border-box",
            with direct feedback from a management, marketing and audience perspective.
          </p>
        </div>
-       <button
-         type="button"
-         className="blu-chek-home-button"
-         onClick={() => navigate("blu-chek-reviews")}
-       >
-         READ THE REVIEWS
-       </button>
+       <a href="/blu-chek-reviews" className="blu-chek-home-button">READ THE REVIEWS</a>
      </section>
 
      <section className="sponsors-section">
@@ -333,7 +325,7 @@ boxSizing: "border-box",
   </div>
 </section>
      <section id="artists">
-     <h2>Meet the Krew</h2>
+     <h1>Meet Blu’s Krew Artists</h1>
      <div className="artist-grid">
 <div
   className="artist-card karson-card"
@@ -347,12 +339,14 @@ boxSizing: "border-box",
 >
   <img
     src={karsonLogo}
+    loading="lazy"
     alt="Karson Blu"
     className="artist-logo karson-logo"
   />
 
   <img
     src={karsonPhoto}
+    loading="lazy"
     alt="Karson Blu"
     className="artist-photo karson-photo"
   />
@@ -369,11 +363,13 @@ boxSizing: "border-box",
 >
   <img
   src={ktMelloLogo}
+    loading="lazy"
   alt="KT Mello"
   className="artist-logo kt-logo"
 />
   <img
   src={ktMelloPhoto}
+    loading="lazy"
   alt="KT Mello"
   className="artist-photo kt-photo"
 />
@@ -390,11 +386,13 @@ boxSizing: "border-box",
 >
  <img
   src={jay2xLogo}
+    loading="lazy"
   alt="Jay2X"
   className="artist-logo jay-logo"
 />
   <img
   src={jay2xPhoto}
+    loading="lazy"
   alt="Jay2X"
   className="artist-photo jay-photo"
 />
@@ -412,12 +410,14 @@ boxSizing: "border-box",
 >
   <img
     src={j74lLogo}
+    loading="lazy"
     alt="J74L"
     className="artist-logo j74l-logo"
   />
 
   <img
     src={j74lPhoto}
+    loading="lazy"
     alt="J74L"
     className="artist-photo j74l-photo"
   />
@@ -426,7 +426,7 @@ boxSizing: "border-box",
 
      </section>
      <section className="krew-section">
-  <h2>MEET THE KREW</h2>
+  <h2>MEET THE FOUNDER</h2>
 
   <div className="krew-grid">
    <div
