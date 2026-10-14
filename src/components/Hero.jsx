@@ -10,7 +10,7 @@ export default function Hero() {
   loop
   playsInline
   controls={false}
-  preload="auto">
+  preload="metadata">
   <source src={heroVideo} />
 </video>
       <div className="hero-content">
