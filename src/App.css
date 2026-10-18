@@ -500,6 +500,66 @@ object-fit: contain;
   margin-top: 15px;
 }
 
+.karson-recognition {
+  position: relative;
+  z-index: 2;
+  width: min(1050px, calc(100% - 32px));
+  margin: 42px auto 10px;
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(280px, 0.65fr);
+  align-items: center;
+  gap: 42px;
+  padding: 34px;
+  box-sizing: border-box;
+  border: 1px solid rgba(255, 201, 75, 0.34);
+  border-radius: 18px;
+  background: linear-gradient(135deg, rgba(36, 152, 255, 0.1), rgba(7, 17, 31, 0.94));
+  text-align: left;
+}
+
+.karson-recognition-copy > p {
+  margin: 0 0 10px;
+  color: #ffc94b;
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0.22em;
+}
+
+.karson-recognition-copy h2 {
+  margin: 0 0 16px;
+  color: #ffffff;
+  font-size: clamp(2rem, 5vw, 4rem);
+  line-height: 0.95;
+}
+
+.karson-recognition-copy span {
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+.karson-award-graphic {
+  display: block;
+  width: 100%;
+  max-width: 420px;
+  justify-self: end;
+  border-radius: 14px;
+  box-shadow: 0 22px 60px rgba(0, 0, 0, 0.38);
+}
+
+@media (max-width: 760px) {
+  .karson-recognition {
+    grid-template-columns: 1fr;
+    gap: 26px;
+    padding: 24px 18px;
+    text-align: center;
+  }
+
+  .karson-award-graphic {
+    justify-self: center;
+  }
+}
+
 .karson-options {
   display: grid;
   grid-template-columns: repeat(2, minmax(180px, 300px));

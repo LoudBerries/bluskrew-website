@@ -78,6 +78,21 @@ function KarsonBlu({ onBack, onShop }) {
   alt="Karson Blu"
   className="karson-hero-photo"
 />
+
+      <section className="karson-recognition" aria-labelledby="karson-recognition-title">
+        <div className="karson-recognition-copy">
+          <p>2026 TRAPRITE AWARDS</p>
+          <h2 id="karson-recognition-title">FEMALE ARTIST OF THE YEAR</h2>
+          <span>Karson Blu took home the honor. We are just getting started.</span>
+        </div>
+        <img
+          src="/images/karson-traprite-female-artist-2026.webp"
+          alt="Karson Blu — 2026 TrapRite Female Artist of the Year"
+          className="karson-award-graphic"
+          loading="lazy"
+        />
+      </section>
+
       <section className="karson-options">
 
        <button
