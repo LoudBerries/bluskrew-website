@@ -26,6 +26,16 @@ function KarsonBlu({ onBack, onShop }) {
         <p>
           Built through pressure. Blooming anyway.
         </p>
+
+        <div
+          className="karson-award-badge"
+          role="note"
+          aria-label="2026 TrapRite Female Artist of the Year"
+        >
+          <span>2026 TRAPRITE AWARDS</span>
+          <strong>FEMALE ARTIST OF THE YEAR</strong>
+        </div>
+
         <a
   href="https://www.instagram.com/karson.blu/"
   target="_blank"
@@ -48,11 +58,11 @@ function KarsonBlu({ onBack, onShop }) {
   <h2>ABOUT KARSON BLU</h2>
 
   <p>
-    Karson Blu is a Minneapolis-born artist bringing a gritty, edgy,
-    unapologetic energy to every record and performance. Built through
-    pressure and blooming anyway, Karson blends raw personality,
-    confidence, and real-life experience into music designed to leave
-    an impression.
+    Karson Blu is the 2026 TrapRite Female Artist of the Year, a
+    Minneapolis-born artist bringing gritty, edgy, unapologetic energy
+    to every record and performance. Built through pressure and blooming
+    anyway, Karson blends raw personality, confidence, and real-life
+    experience into music designed to leave an impression.
   </p>
 
   <p>
