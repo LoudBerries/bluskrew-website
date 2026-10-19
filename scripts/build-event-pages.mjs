@@ -1,4 +1,4 @@
-import { readFile, writeFile, mkdir } from "node:fs/promises";
+import { readFile, writeFile, mkdir, copyFile } from "node:fs/promises";
 import { join } from "node:path";
 
 // Generate a real HTML entry point with the same Vite bundle and all existing forms.
@@ -37,3 +37,40 @@ const eventHtml = home
 await mkdir(join(dist, "events"), { recursive: true });
 await writeFile(join(dist, "events", "index.html"), eventHtml, "utf8");
 console.log("Built /events social preview HTML.");
+
+// Artist links need their own server-readable identity, including canonical URL.
+// Reuse the existing public artist photo without changing the React page or forms.
+await mkdir(join(dist, "images"), { recursive: true });
+await copyFile("src/assets/images/karson-goto.jpeg", join(dist, "images", "karson-blu-epk.jpeg"));
+const karsonMeta = `
+  <title>Karson Blu | Official EPK & Booking | Blu's Krew</title>
+  <meta name="description" content="Karson Blu, Minneapolis artist and 2026 TrapRite Female Artist of the Year. Explore her music, videos, artist bio and booking information." />
+  <link rel="canonical" href="https://bluskrew.media/karsonblu" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Blu's Krew" />
+  <meta property="og:title" content="Karson Blu | Official EPK & Booking" />
+  <meta property="og:description" content="2026 TrapRite Female Artist of the Year. Music, videos, artist bio and booking information for Minneapolis artist Karson Blu." />
+  <meta property="og:url" content="https://bluskrew.media/karsonblu" />
+  <meta property="og:image" content="https://bluskrew.media/images/karson-blu-epk.jpeg" />
+  <meta property="og:image:secure_url" content="https://bluskrew.media/images/karson-blu-epk.jpeg" />
+  <meta property="og:image:type" content="image/jpeg" />
+  <meta property="og:image:alt" content="Karson Blu — official artist portrait" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Karson Blu | Official EPK & Booking" />
+  <meta name="twitter:description" content="2026 TrapRite Female Artist of the Year. Explore Karson Blu's music, videos and booking information." />
+  <meta name="twitter:image" content="https://bluskrew.media/images/karson-blu-epk.jpeg" />
+  <meta name="twitter:image:alt" content="Karson Blu — official artist portrait" />
+`;
+const karsonHtml = home
+  .replace(/<title>[^<]*<\/title>/, "")
+  .replace(/<meta name="description"[^>]*\/>/g, "")
+  .replace(/<meta property="og:[^>]*\/>/g, "")
+  .replace(/<meta name="twitter:[^>]*\/>/g, "")
+  .replace(/<link rel="canonical"[^>]*\/>/g, "")
+  .replace(/<script type="application\/ld\+json">[\s\S]*?<\/script>/g, "")
+  .replace("</head>", `${karsonMeta}</head>`);
+for (const path of ["karsonblu", "karson-blu"]) {
+  await mkdir(join(dist, path), { recursive: true });
+  await writeFile(join(dist, path, "index.html"), karsonHtml, "utf8");
+}
+console.log("Built Karson Blu EPK social preview HTML.");

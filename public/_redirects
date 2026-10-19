@@ -1,5 +1,9 @@
 /events /events/index.html 200
 /events/ /events/index.html 200
+/karsonblu /karsonblu/index.html 200
+/karsonblu/ /karsonblu/index.html 200
+/karson-blu /karson-blu/index.html 200
+/karson-blu/ /karson-blu/index.html 200
 /blu-chek-reviews /index.html 200
 /blu-chek-reviews/ /index.html 200
 /blu-chek-reviews/* /.netlify/functions/blu-chek-article?article=:splat 200
