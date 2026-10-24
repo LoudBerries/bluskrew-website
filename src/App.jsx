@@ -1,6 +1,7 @@
 import React from "react";
 import Hero from "./components/Hero";
 import Events from "./components/Events";
+import VendorApplication from "./components/VendorApplication";
 import KarsonBlu from "./components/KarsonBlu";
 import KTMello from "./components/KTMello";
 import Jay2X from "./components/Jay2X";
@@ -50,6 +51,8 @@ const pathToPage = (pathname) => {
     "/shop": "shop",
     "/contact": "contact",
     "/events": "events",
+    "/vendors": "vendors",
+    "/vendor-application-received": "vendor-application-received",
     "/blu-chek-reviews": "blu-chek-reviews",
     "/blu-chek-publisher": "blu-chek-publisher",
   };
@@ -67,6 +70,8 @@ const pageToPath = {
   shop: "/shop",
   contact: "/contact",
   events: "/events",
+  vendors: "/vendors",
+  "vendor-application-received": "/vendor-application-received",
   "blu-chek-reviews": "/blu-chek-reviews",
   "blu-chek-publisher": "/blu-chek-publisher",
 };
@@ -123,6 +128,8 @@ if (page === "blu-chek-reviews") {
   return <BluChekPublisher onBack={() => navigate("home")} />;
 }
 if (page === "events") return <Events onBack={() => navigate("home")} />;
+if (page === "vendors") return <VendorApplication />;
+if (page === "vendor-application-received") return <VendorApplication received />;
 if (page === "contact") {
   return (
     <main

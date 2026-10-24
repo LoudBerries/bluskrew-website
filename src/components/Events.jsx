@@ -72,6 +72,7 @@ export default function Events({ onBack }) {
                 <a className="bk-event-contact" href="mailto:booking@bluskrew.media?subject=Event%20Inquiry">EVENT QUESTIONS</a>
               </div>
               <p className="bk-event-disclaimer">Ticket purchases are completed securely through the official ticketing provider. Ticket types and availability are shown on Etix.</p>
+              <div className="bk-event-vendors"><strong>WE AIN’T THEM.</strong><p>We’re curating the vendor lineup. Quality products, strong presentation, and a fit for the crowd.</p><a className="bk-event-contact" href="/vendors">VENDORS: APPLY FOR A TABLE →</a></div>
             </div>
           </article>
         ))}

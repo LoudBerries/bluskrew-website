@@ -74,3 +74,37 @@ for (const path of ["karsonblu", "karson-blu"]) {
   await writeFile(join(dist, path, "index.html"), karsonHtml, "utf8");
 }
 console.log("Built Karson Blu EPK social preview HTML.");
+
+// Keep the vendor invitation distinct when shared and provide a real POST landing page.
+for (const [path, title, description] of [
+  ["vendors", "Vendor Application | The Roast of AK Bloccboss | Blu’s Krew", "We ain’t them. Show us what makes you different. Apply for the curated vendor lineup at The Roast of AK Bloccboss, December 12, 2026 at The Cabooze. Approval required."],
+  ["vendor-application-received", "Vendor Application Received | Blu’s Krew", "Your vendor application has been submitted for review. Applying does not confirm a table."],
+]) {
+  const vendorMeta = `
+  <title>${title}</title>
+  <meta name="description" content="${description}" />
+  <link rel="canonical" href="https://bluskrew.media/${path}" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Blu’s Krew" />
+  <meta property="og:title" content="${title}" />
+  <meta property="og:description" content="${description}" />
+  <meta property="og:url" content="https://bluskrew.media/${path}" />
+  <meta property="og:image" content="https://bluskrew.media/images/roast-of-ak-flyer.jpg" />
+  <meta property="og:image:alt" content="The Roast of Big Homie AK at The Cabooze" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="${title}" />
+  <meta name="twitter:description" content="${description}" />
+  <meta name="twitter:image" content="https://bluskrew.media/images/roast-of-ak-flyer.jpg" />
+  ${path === "vendor-application-received" ? '<meta name="robots" content="noindex" />' : ""}`;
+  const html = home
+    .replace(/<title>[^<]*<\/title>/, "")
+    .replace(/<meta name="description"[^>]*\/>/g, "")
+    .replace(/<meta property="og:[^>]*\/>/g, "")
+    .replace(/<meta name="twitter:[^>]*\/>/g, "")
+    .replace(/<link rel="canonical"[^>]*\/>/g, "")
+    .replace(/<script type="application\/ld\+json">[\s\S]*?<\/script>/g, "")
+    .replace("</head>", `${vendorMeta}</head>`);
+  await mkdir(join(dist, path), { recursive: true });
+  await writeFile(join(dist, path, "index.html"), html, "utf8");
+}
+console.log("Built vendor application and acknowledgment HTML.");

@@ -1,3 +1,7 @@
+/vendors /vendors/index.html 200
+/vendors/ /vendors/index.html 200
+/vendor-application-received /vendor-application-received/index.html 200
+/vendor-application-received/ /vendor-application-received/index.html 200
 /events /events/index.html 200
 /events/ /events/index.html 200
 /karsonblu /karsonblu/index.html 200
@@ -7,4 +11,4 @@
 /blu-chek-reviews /index.html 200
 /blu-chek-reviews/ /index.html 200
 /blu-chek-reviews/* /.netlify/functions/blu-chek-article?article=:splat 200
-/* /index.html 200
+/*    /index.html 200
