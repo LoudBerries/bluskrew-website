@@ -93,6 +93,12 @@ function KarsonBlu({ onBack, onShop }) {
         />
       </section>
 
+      <section className="karson-bio" aria-labelledby="karson-news-title">
+        <h2 id="karson-news-title">THE LATEST CHAPTER</h2>
+        <p>Music, live performances, and Artist of the Year recognition.</p>
+        <a href="/news/karson-blu-builds-momentum-2026" style={{color: '#8cdaff'}}>Read the Karson Blu feature →</a>
+      </section>
+
       <section className="karson-options">
 
        <button

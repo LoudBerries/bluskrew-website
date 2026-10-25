@@ -286,6 +286,7 @@ boxSizing: "border-box",
           <a href="/">Home</a>
 <a href="/#artists">Artists</a>
 <a href="/#media">Media</a>
+<a href="/news">News</a>
 <a href="/#artist-development">Artist Development</a>
 <a className="site-nav-feature" href="/blu-chek-reviews">Reviews</a>
 <a href="/shop">Shop</a>
@@ -310,6 +311,15 @@ boxSizing: "border-box",
          </p>
        </div>
        <a href="/blu-chek-reviews" className="blu-chek-home-button">READ THE REVIEWS</a>
+     </section>
+
+     <section className="blu-chek-home-feature" aria-labelledby="karson-news-title">
+       <div className="blu-chek-home-copy">
+         <p className="blu-chek-home-eyebrow">ARTIST NEWS</p>
+         <h2 id="karson-news-title">KARSON BLU BUILDS MOMENTUM</h2>
+         <p>Music, live performances, and 2026 Female Artist of the Year recognition. Read Karson’s latest chapter.</p>
+       </div>
+       <a href="/news/karson-blu-builds-momentum-2026" className="blu-chek-home-button">READ THE STORY</a>
      </section>
 
      <section className="sponsors-section">

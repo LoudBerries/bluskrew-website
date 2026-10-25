@@ -11,4 +11,8 @@
 /blu-chek-reviews /index.html 200
 /blu-chek-reviews/ /index.html 200
 /blu-chek-reviews/* /.netlify/functions/blu-chek-article?article=:splat 200
+/news /news/index.html 200
+/news/ /news/index.html 200
+/news/karson-blu-builds-momentum-2026 /news/karson-blu-builds-momentum-2026/index.html 200
+/news/karson-blu-builds-momentum-2026/ /news/karson-blu-builds-momentum-2026/index.html 200
 /*    /index.html 200
