@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build && node scripts/build-event-pages.mjs && node scripts/build-news-pages.mjs",
+    "build": "vite build && node scripts/build-event-pages.mjs && node scripts/build-news-pages.mjs && node scripts/build-kt-mello-news.mjs",
     "lint": "eslint .",
     "preview": "vite preview"
   },
