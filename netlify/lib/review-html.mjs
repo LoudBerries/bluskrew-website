@@ -1,3 +1,4 @@
+import { socialFooter, socialFooterStyles } from "../../shared/social-footer.mjs";
 import { SITE_URL, reviewPath, httpUrl } from "../../shared/review-links.mjs";
 
 const escape = (value) => String(value ?? "").replace(/[&<>"']/g, (char) =>
@@ -28,7 +29,7 @@ ${image ? `<meta property="og:image" content="${escape(image)}"><meta property="
 ${image ? `<meta name="twitter:image" content="${escape(image)}">` : ""}
 <style>
 *{box-sizing:border-box}body{margin:0;background:#07111f;color:#f4f7fa;font-family:Arial,sans-serif}main{max-width:880px;margin:auto;padding:28px 20px 64px}nav{display:flex;justify-content:space-between;gap:16px;margin-bottom:40px}a{color:#4da6ff}nav a{text-decoration:none}.eyebrow{color:#4da6ff;letter-spacing:3px;font-size:14px;font-weight:bold}article{background:#07182b;border:1px solid #4da6ff4d;border-radius:16px;overflow:hidden}.artwork{display:block;width:100%;max-height:660px;object-fit:contain;background:#03101f}.content{padding:clamp(20px,5vw,40px)}h1{font-size:clamp(28px,6vw,44px);margin:8px 0;overflow-wrap:anywhere}h2{color:#a9b8c9;font-size:22px;margin:8px 0 24px}.rating{color:#4da6ff;font-size:24px;letter-spacing:4px}.copy{white-space:pre-wrap;line-height:1.8;overflow-wrap:anywhere}.date{color:#a9b8c9;font-size:14px}.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}.actions a,.actions button{display:inline-block;background:#4da6ff;color:#03101f;border:0;border-radius:8px;padding:12px 18px;font:bold 14px Arial;text-decoration:none;cursor:pointer}a:focus-visible,button:focus-visible{outline:3px solid white;outline-offset:4px}#share-status{line-height:1.5;overflow-wrap:anywhere}
-</style></head><body><main>
+</style><style>${socialFooterStyles}</style></head><body><main>
 <nav><a href="/">Blu's Krew</a><a href="/blu-chek-reviews">← All reviews</a></nav>
 <p class="eyebrow">BLU CHEK · RECORD REVIEW</p>
 <article>${image ? `<img class="artwork" src="${escape(image)}" alt="${escape(item.artist)} — ${escape(item.title)} artwork">` : ""}
@@ -46,5 +47,5 @@ document.getElementById('copy-link').addEventListener('click', async function ()
   try { await navigator.clipboard.writeText(link); status.textContent = 'Article link copied.'; }
   catch { status.textContent = 'Copy this article link: ' + link; }
 });
-</script></body></html>`;
+</script>${socialFooter}</body></html>`;
 }
