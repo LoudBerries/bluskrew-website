@@ -1,7 +1,7 @@
 export const socialLinks = [
   ['Instagram', 'https://instagram.com/bluskrew'],
   ['YouTube', 'https://www.youtube.com/@bluskrewtv'],
-  ['Facebook', 'https://www.facebook.com/profile.php?id=932569133273092'],
+  ['Facebook', 'https://www.facebook.com/people/Blus-Krew/61585760019342/'],
   ['TikTok', 'https://www.tiktok.com/@bluskrew'],
 ];
 
