@@ -108,3 +108,42 @@ for (const [path, title, description] of [
   await writeFile(join(dist, path, "index.html"), html, "utf8");
 }
 console.log("Built vendor application and acknowledgment HTML.");
+
+/* Give each public React route a distinct, server-readable search identity. */
+const seoPages = [
+  ["ktmello", "KT Mello | Artist Profile & Booking | Blu's Krew", "Explore KT Mello's artist profile, music and booking information with Blu's Krew Media."],
+  ["jay2x", "Jay2X | Artist Profile & Booking | Blu's Krew", "Discover Jay2X, his music, artist profile and booking information with Blu's Krew Media."],
+  ["j74l", "J74L | Artist Profile & Booking | Blu's Krew", "Explore J74L's artist profile, music and booking information with Blu's Krew Media."],
+  ["aj", "AJ Harris | Founder of Blu's Krew Media", "Meet AJ Harris, founder and creative director of Blu's Krew Media."],
+  ["shop", "Shop | Blu's Krew", "Explore merchandise from Blu's Krew and its artists."],
+  ["contact", "Contact | Blu's Krew Media", "Contact Blu's Krew Media about bookings, partnerships, events and artist opportunities."],
+  ["blu-chek-reviews", "Blu Chek Record Reviews | Blu's Krew", "Explore Blu Chek record reviews and submit independent music for review."]
+];
+for (const [path, title, description] of seoPages) {
+  const safe = value => value.replaceAll("&", "&amp;").replaceAll('"', "&quot;");
+  const url = "https://bluskrew.media/" + path;
+  const meta = `
+    <title>${safe(title)}</title>
+    <meta name="description" content="${safe(description)}" />
+    <link rel="canonical" href="${url}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Blu's Krew" />
+    <meta property="og:title" content="${safe(title)}" />
+    <meta property="og:description" content="${safe(description)}" />
+    <meta property="og:url" content="${url}" />
+    <meta property="og:image" content="https://bluskrew.media/images/blus-krew-share.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="${safe(title)}" />
+    <meta name="twitter:description" content="${safe(description)}" />
+    <meta name="twitter:image" content="https://bluskrew.media/images/blus-krew-share.jpg" />
+  `;
+  const html = home
+    .replace(/<title>[^<]*<\/title>/, "")
+    .replace(/<meta name="description"[^>]*\/>/g, "")
+    .replace(/<meta property="og:[^>]*\/>/g, "")
+    .replace(/<meta name="twitter:[^>]*\/>/g, "")
+    .replace(/<link rel="canonical"[^>]*\/>/g, "")
+    .replace("</head>", `${meta}</head>`);
+  await mkdir(join(dist, path), { recursive: true });
+  await writeFile(join(dist, path, "index.html"), html, "utf8");
+}

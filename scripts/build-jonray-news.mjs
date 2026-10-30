@@ -1,5 +1,5 @@
 import { mkdir, writeFile, readFile } from 'node:fs/promises';
-const origin = 'https://www.bluskrew.media';
+const origin = 'https://bluskrew.media';
 const esc = value => value.replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;');
 const news = await readFile('dist/news/index.html','utf8');
 function page({pageTitle,summary,pagePath,body,shareImage,imageAlt,publishedDate,schema}) {

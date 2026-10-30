@@ -1,6 +1,6 @@
 import { mkdir, writeFile } from 'node:fs/promises';
 
-const origin = 'https://www.bluskrew.media';
+const origin = 'https://bluskrew.media';
 const slug = 'karson-blu-builds-momentum-2026';
 const path = `/news/${slug}`;
 const title = 'Karson Blu Builds Momentum With Music, Live Performances, and Artist of the Year Recognition';
