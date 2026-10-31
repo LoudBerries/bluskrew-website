@@ -147,12 +147,12 @@ function KTMello({ onBack, onShop }) {
 )}
 {activeSection === "videos" && (
   <section className="karson-videos">
-    <h2>KARSON BLU VIDEOS</h2>
+    <h2>KT MELLO VIDEOS</h2>
     <iframe
   width="100%"
   height="500"
-  src="https://www.youtube.com/embed/8vCJNNzUpjg"
-  title="Karson Blu - Miney Moe"
+  src="https://www.youtube.com/embed/fiHtaMFJqNo"
+  title="KT Mello video"
   allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
   allowFullScreen
 ></iframe>
