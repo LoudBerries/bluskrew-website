@@ -349,14 +349,14 @@ boxSizing: "border-box",
      <section id="artists">
      <h1>Meet Blu’s Krew Artists</h1>
      <div className="artist-grid">
-<div
+<a
   className="artist-card karson-card"
+  href="/karsonblu/"
   onClick={() => {
   window.gtag?.("event", "page_view", {
     page_title: "Karson Blu",
     page_path: "/karsonblu",
   });
-  navigate("karson");
 }}
 >
   <img
@@ -372,15 +372,15 @@ boxSizing: "border-box",
     alt="Karson Blu"
     className="artist-photo karson-photo"
   />
-</div>
-<div
+</a>
+<a
   className="artist-card kt-card"
+  href="/ktmello/"
   onClick={() => {
     window.gtag?.("event", "page_view", {
       page_title: "KT Mello",
       page_path: "/ktmello",
     });
-    navigate("ktmello");
   }}
 >
   <img
@@ -395,15 +395,15 @@ boxSizing: "border-box",
   alt="KT Mello"
   className="artist-photo kt-photo"
 />
-</div>
-<div
+</a>
+<a
   className="artist-card jay-card"
+  href="/jay2x/"
   onClick={() => {
     window.gtag?.("event", "page_view", {
       page_title: "Jay2X",
       page_path: "/jay2x",
     });
-    navigate("jay2x");
   }}
 >
  <img
@@ -418,16 +418,16 @@ boxSizing: "border-box",
   alt="Jay2X"
   className="artist-photo jay-photo"
 />
-</div>
+</a>
 
-<div
+<a
   className="artist-card j74l-card"
+  href="/j74l/"
   onClick={() => {
     window.gtag?.("event", "page_view", {
       page_title: "J74L",
       page_path: "/j74l",
     });
-    navigate("j74l");
   }}
 >
   <img
@@ -443,7 +443,7 @@ boxSizing: "border-box",
     alt="J74L"
     className="artist-photo j74l-photo"
   />
-</div>
+</a>
 </div>
 
      </section>
@@ -451,20 +451,20 @@ boxSizing: "border-box",
   <h2>MEET THE FOUNDER</h2>
 
   <div className="krew-grid">
-   <div
+   <a
   className="krew-card"
+  href="/aj/"
   onClick={() => {
     window.gtag?.("event", "page_view", {
       page_title: "AJ Harris",
       page_path: "/aj",
     });
-    navigate("aj");
   }}
 >
       <h3>AJ HARRIS</h3>
       <p>Founder • Manager • Creative Director</p>
       <span>The guy behind Blu's Krew.</span>
-    </div>
+    </a>
   </div>
 </section>
  <section id="artist-development" className="developing-section">

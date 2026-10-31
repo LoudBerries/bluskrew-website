@@ -8,12 +8,12 @@ const home = await readFile(join(dist, "index.html"), "utf8");
 const meta = `
   <title>The Roast of Big Homie AK | Blu's Krew Events</title>
   <meta name="description" content="The Roast of Big Homie AK, Dec 12, 2026 at The Cabooze in Minneapolis. Doors 6 PM, show 7 PM. 21+. 90s dance party featuring DJ AK." />
-  <link rel="canonical" href="https://bluskrew.media/events" />
+  <link rel="canonical" href="https://bluskrew.media/events/" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Blu's Krew" />
   <meta property="og:title" content="The Roast of Big Homie AK | Dec 12 at The Cabooze" />
   <meta property="og:description" content="Blu's Krew presents The Roast of Big Homie AK. December 12, 2026. Doors 6 PM, show 7 PM. 90s Dance Party featuring DJ AK. 21+. Get tickets through Etix." />
-  <meta property="og:url" content="https://bluskrew.media/events" />
+  <meta property="og:url" content="https://bluskrew.media/events/" />
   <meta property="og:image" content="https://bluskrew.media/images/roast-of-ak-flyer.jpg" />
   <meta property="og:image:secure_url" content="https://bluskrew.media/images/roast-of-ak-flyer.jpg" />
   <meta property="og:image:type" content="image/jpeg" />
@@ -45,12 +45,12 @@ await copyFile("src/assets/images/karson-goto.jpeg", join(dist, "images", "karso
 const karsonMeta = `
   <title>Karson Blu | Official EPK & Booking | Blu's Krew</title>
   <meta name="description" content="Karson Blu, Minneapolis artist and 2026 TrapRite Female Artist of the Year. Explore her music, videos, artist bio and booking information." />
-  <link rel="canonical" href="https://bluskrew.media/karsonblu" />
+  <link rel="canonical" href="https://bluskrew.media/karsonblu/" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Blu's Krew" />
   <meta property="og:title" content="Karson Blu | Official EPK & Booking" />
   <meta property="og:description" content="2026 TrapRite Female Artist of the Year. Music, videos, artist bio and booking information for Minneapolis artist Karson Blu." />
-  <meta property="og:url" content="https://bluskrew.media/karsonblu" />
+  <meta property="og:url" content="https://bluskrew.media/karsonblu/" />
   <meta property="og:image" content="https://bluskrew.media/images/karson-blu-epk.jpeg" />
   <meta property="og:image:secure_url" content="https://bluskrew.media/images/karson-blu-epk.jpeg" />
   <meta property="og:image:type" content="image/jpeg" />
@@ -83,12 +83,12 @@ for (const [path, title, description] of [
   const vendorMeta = `
   <title>${title}</title>
   <meta name="description" content="${description}" />
-  <link rel="canonical" href="https://bluskrew.media/${path}" />
+  <link rel="canonical" href="https://bluskrew.media/${path}/" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Blu’s Krew" />
   <meta property="og:title" content="${title}" />
   <meta property="og:description" content="${description}" />
-  <meta property="og:url" content="https://bluskrew.media/${path}" />
+  <meta property="og:url" content="https://bluskrew.media/${path}/" />
   <meta property="og:image" content="https://bluskrew.media/images/roast-of-ak-flyer.jpg" />
   <meta property="og:image:alt" content="The Roast of Big Homie AK at The Cabooze" />
   <meta name="twitter:card" content="summary_large_image" />
@@ -121,7 +121,7 @@ const seoPages = [
 ];
 for (const [path, title, description] of seoPages) {
   const safe = value => value.replaceAll("&", "&amp;").replaceAll('"', "&quot;");
-  const url = "https://bluskrew.media/" + path;
+  const url = "https://bluskrew.media/" + path + "/";
   const meta = `
     <title>${safe(title)}</title>
     <meta name="description" content="${safe(description)}" />

@@ -2032,3 +2032,6 @@ nav span {
   .sponsors-grid { width: 100%; gap: 22px; }
   .sponsor-card { box-sizing: border-box; max-width: 100%; }
 }
+
+/* Preserve card appearance while exposing real crawlable links. */
+a.artist-card, a.krew-card { color: inherit; text-decoration: none; }

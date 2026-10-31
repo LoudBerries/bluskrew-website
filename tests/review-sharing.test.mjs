@@ -40,7 +40,7 @@ test("Netlify rewrite query selects the same article", async () => {
   const request = new Request(`https://bluskrew.media/.netlify/functions/blu-chek-article?article=jonray-la-la-la--${item.id}`);
   assert.equal((await articleResponse(request, { get: async () => item })).status, 200);
   const redirects = await readFile(new URL("../public/_redirects", import.meta.url), "utf8");
-  assert.ok(redirects.indexOf("/blu-chek-reviews/*") < redirects.indexOf("/*    /index.html"));
+  assert.ok(redirects.indexOf("/blu-chek-reviews/*") < redirects.indexOf("/*    /404.html"));
 });
 
 test("missing and deleted articles return 404; HEAD and disallowed methods behave correctly", async () => {

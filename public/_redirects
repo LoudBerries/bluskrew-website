@@ -1,3 +1,14 @@
+/artists /#artists 301!
+/artists/ /#artists 301!
+/reviews /blu-chek-reviews/ 301!
+/reviews/ /blu-chek-reviews/ 301!
+/karson-blu /karsonblu/ 301!
+/karson-blu/ /karsonblu/ 301!
+/kt-mello /ktmello/ 301!
+/kt-mello/ /ktmello/ 301!
+/aj-harris /aj/ 301!
+/aj-harris/ /aj/ 301!
+/review-sitemap.xml /.netlify/functions/review-sitemap 200
 /vendors /vendors/index.html 200
 /vendors/ /vendors/index.html 200
 /vendor-application-received /vendor-application-received/index.html 200
@@ -6,8 +17,6 @@
 /events/ /events/index.html 200
 /karsonblu /karsonblu/index.html 200
 /karsonblu/ /karsonblu/index.html 200
-/karson-blu /karson-blu/index.html 200
-/karson-blu/ /karson-blu/index.html 200
 /blu-chek-reviews /blu-chek-reviews/index.html 200
 /blu-chek-reviews/ /blu-chek-reviews/index.html 200
 /blu-chek-reviews/* /.netlify/functions/blu-chek-article?article=:splat 200
@@ -19,4 +28,6 @@
 /news/kt-mello-his-own-motion-new-direction/ /news/kt-mello-his-own-motion-new-direction/index.html 200
 /news/jonray-so-thick-birthday /news/jonray-so-thick-birthday/index.html 200
 /news/jonray-so-thick-birthday/ /news/jonray-so-thick-birthday/index.html 200
-/*    /index.html 200
+/blu-chek-publisher /index.html 200
+/blu-chek-publisher/ /index.html 200
+/*    /404.html 404

@@ -7,7 +7,7 @@ return `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="v
 }
 
 const slug = 'jonray-so-thick-birthday';
-const path = '/news/' + slug;
+const path = '/news/' + slug + '/';
 const title = 'In a City Full of Futures, Be a JonRay';
 const description = 'JonRay celebrates his birthday with “So Thick”—and another reminder of why his personality keeps me watching.';
 const image = '/images/news/jonray-so-thick-counter.jpeg';
