@@ -15,10 +15,10 @@ export default function BluChekReviews({ onBack }) {
       <section className="review-hero">
         <p>BLU CHEK</p>
         <h1>VALID OR NOT VALID?</h1>
-        <h2>$50 PROFESSIONAL RECORD ASSESSMENT</h2>
+        <h2>$10 PROFESSIONAL RECORD ASSESSMENT</h2>
         <p>Your record deserves more than a 🔥 emoji.</p>
         <p>Blu's Krew listens from a management, marketing and audience perspective, then gives you direct feedback you can actually use.</p>
-        <strong>Your $50 pays for the assessment, not a positive review.</strong>
+        <strong>Your $10 pays for the assessment, not a positive review.</strong>
       </section>
       <section className="review-details">
         <h2>THE BLU CHEK</h2>
@@ -42,11 +42,11 @@ export default function BluChekReviews({ onBack }) {
           <input type="url" name="song-link" placeholder="Private or Public Song Link" required />
           <textarea name="notes" placeholder="Anything we should know about the record?" rows="5" />
           <div className="review-payment">
-            <h3>$50 REVIEW FEE</h3>
-            <p>Send $50 via Cash App to <strong>$BlusKrew</strong>.</p>
+            <h3>$10 REVIEW FEE</h3>
+            <p>Send $10 via Cash App to <strong>$BlusKrew</strong>.</p>
             <p>Put your artist name and song title in the payment note so we can match it to your submission.</p>
             <p><strong>Your review begins after payment is confirmed.</strong></p>
-            <a href="https://cash.app/$BlusKrew" target="_blank" rel="noopener noreferrer" className="review-pay-button">PAY $50 WITH CASH APP</a>
+            <a href="https://cash.app/$BlusKrew" target="_blank" rel="noopener noreferrer" className="review-pay-button">PAY $10 WITH CASH APP</a>
           </div>
           <button type="submit">SUBMIT RECORD</button>
         </form>
