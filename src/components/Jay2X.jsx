@@ -139,7 +139,15 @@ function Jay2X({ onBack, onShop }) {
           allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
           loading="lazy"
         ></iframe>
-       
+        <iframe
+          title="Nostalgia (Will the Cycle Ever End??) - EP on Apple Music"
+          src="https://embed.music.apple.com/us/album/nostalgia-will-the-cycle-ever-end-ep/6834622185"
+          width="100%"
+          height="450"
+          frameBorder="0"
+          allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write *"
+          loading="lazy"
+        ></iframe>
       </div>
     </div>
   </section>
